@@ -16,12 +16,6 @@ public class NDOreBlocks implements ContentList{
 			oreScale = 24.39528f;
 		}};
 
-		oreGold = new OreBlock("ore-gold", NDItems.gold){{
-			oreDefault = true;
-			oreThreshold = 0.879f;
-			oreScale = 25.67389f;
-		}};
-
 		oreAluminium = new OreBlock("ore-aluminium", NDItems.aluminium){{
 			oreDefault = true;
 			oreThreshold = 0.843f;

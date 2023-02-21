@@ -6,11 +6,11 @@ import mindustry.world.*;
 import mindustry.world.blocks.storage.*;
 
 public class NDCoreBlocks implements ContentList{
-	public static Block NDcore;
+	public static Block hanCore;
 
 	@Override
 	public void load(){
-		NDcore = new CoreBlock("ND-core"){{
+		hanCore = new CoreBlock("han-core"){{
 			requirements(Category.effect, ItemStack.with(
 				NDItems.steel, 1000,
 				NDItems.aluminium, 200

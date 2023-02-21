@@ -12,7 +12,7 @@ public class NDTechTree implements ContentList{
 	@Override
 	public void load(){
 		{
-			NDPlanets.ND.techTree = nodeRoot("ND", NDcore, () -> {
+			NDPlanets.ND.techTree = nodeRoot("ND", hanCore, () -> {
 				node(tungstenWall, () -> {
 					node(tungstenWallLarge, () -> {
 						node(nanoAlloyWall, () -> {
@@ -33,9 +33,7 @@ public class NDTechTree implements ContentList{
 							nodeProduce(NDItems.iterativeModule, () -> {});
 						});
 					});
-					nodeProduce(NDItems.aluminium, () -> {
-						nodeProduce(NDItems.gold, () -> {});
-					});
+					nodeProduce(NDItems.aluminium, () -> {});
 				});
 
 				nodeProduce(NDLiquids.lava, () -> {

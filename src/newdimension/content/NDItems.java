@@ -10,7 +10,6 @@ public class NDItems implements ContentList{
 	public static Item iron,//铁
 	radioactiveSubstances,//放射物
 	hypernuclearCondensates,//超核凝聚物
-	gold,//黄金
 	steel,//钢
 	iterativeModule,//迭代模块
 	electricCube,//电立方
@@ -45,11 +44,6 @@ public class NDItems implements ContentList{
 			radioactivity = 5f;
 		}};
 
-		gold = new Item("gold", Color.valueOf("E88665")){{
-			hardness = 3;
-			cost = 1.6f;
-		}};
-
 		steel = new Item("steel", Color.valueOf("E84649")){{
 			cost = 1.45f;
 		}};
@@ -81,7 +75,7 @@ public class NDItems implements ContentList{
 		}};
 
 		ndItems.addAll(
-			iron, radioactiveSubstances, hypernuclearCondensates, gold,//黄金
+			iron, radioactiveSubstances, hypernuclearCondensates,
 			steel, iterativeModule, electricCube, aluminium, refactoringModule,
 			nanoAlloy
 		);

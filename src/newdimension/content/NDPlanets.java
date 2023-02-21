@@ -33,7 +33,7 @@ public class NDPlanets implements ContentList{
 			);
 		}};*/
 
-	   ND = new Planet("ND", Planets.sun, 2f, 3){{
+	   ND = new Planet("ND", Planets.sun, 1f, 3){{
 			generator = new SerpuloPlanetGenerator();
 			meshLoader = () -> new HexMesh(this, 5);
 			cloudMeshLoader = () -> new MultiMesh(
@@ -53,7 +53,7 @@ public class NDPlanets implements ContentList{
 			lightSrcTo = 0.5f;
 			lightDstFrom = 0.2f;
 			clearSectorOnLose = true;
-			defaultCore = NDCoreBlocks.NDcore;
+			defaultCore = NDCoreBlocks.hanCore;
 			hiddenItems.addAll(NDItems.ndItems).removeAll(Items.serpuloItems);
 
 			//TODO SHOULD there be lighting?
@@ -71,7 +71,7 @@ public class NDPlanets implements ContentList{
 				r.onlyDepositCore = true; //TODO not sure
 			};
 
-			unlockedOnLand.add(NDCoreBlocks.NDcore);
+			unlockedOnLand.add(NDCoreBlocks.hanCore);
 		}};
 	}
 }
