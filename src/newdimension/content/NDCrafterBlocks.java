@@ -10,7 +10,9 @@ public class NDCrafterBlocks implements ContentList{
 	public static Block steelFactory,//钢厂
 	electricCubeBaler,//电立方打包机
 	superNuclearMachine,//超核机
-	tungstenSteelSmelter;//钨钢冶炼厂
+	tungstenSteelSmelter,//钨钢冶炼厂
+	nanoAlloyFactory,//纳米合金制造厂
+	researchCenter;//研究中心
 
 	@Override
 	public void load(){
@@ -82,6 +84,16 @@ public class NDCrafterBlocks implements ContentList{
 			);
 			consumePower(6f);
 			outputItem = new ItemStack(NDItems.tungstenSteel, 2);
+		}};
+
+		researchCenter = new GenericCrafter("research-center"){{
+			requirements(Category.crafting, ItemStack.with(
+				Items.silicon, 300,
+				NDItems.steel, 400,
+			));
+			size = 3;
+			health = 1200;
+			craftTime = 120f;
 		}};
 	}
 }

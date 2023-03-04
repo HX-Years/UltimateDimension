@@ -35,7 +35,7 @@ public class NewDimension extends Mod{
 	@Override
 	public void loadContent(){
 		Log.info("Loading some newdimension content.");
-		for (ContentList ndlist : NewDimension.modContents){
+		for(ContentList ndlist : NewDimension.modContents){
 			ndlist.load();
 		}
 	}

@@ -9,7 +9,7 @@ public class NDCoreBlocks implements ContentList{
 	public static Block hanCore;
 
 	@Override
-	public void load(){
+	public void load() {
 		hanCore = new CoreBlock("han-core"){{
 			requirements(Category.effect, ItemStack.with(
 				NDItems.steel, 1000,

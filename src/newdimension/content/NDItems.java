@@ -16,7 +16,12 @@ public class NDItems implements ContentList{
 	tungstenSteel,//钨钢
 	aluminium,//铝
 	refactoringModule,//重构模块
-	nanoAlloy;//纳米合金
+	nanoAlloy,//纳米合金
+	dataCube,//数据立方
+	superComputingCube,//超算立方
+	modelCube,//模型立方
+	structureCube,//结构立方
+	setCube;//集合立方
 
 	/*"explosiveness"爆炸性
 	"flammability"燃烧性，在燃烧发电机中这个与发电量成正比例
@@ -74,10 +79,26 @@ public class NDItems implements ContentList{
 			cost = 1.2f;
 		}};
 
+		dataCube = new Item("data-cube", Color.valueOf("F65827")){{
+		}};
+
+		superComputingCube = new Item("supercomputing-cube", Color.valueOf("F65827")){{
+		}};
+
+		modelCube = new Item("model-cube", Color.valueOf("F65827")){{
+		}};
+
+		structrueCube = new Item("structure-cube", Color.valueOf("F65827")){{
+		}};
+
+		setCube = new Item("set-cube", Color.valueOf("F65827")){{
+		}};
+
 		ndItems.addAll(
 			iron, radioactiveSubstances, hypernuclearCondensates,
 			steel, iterativeModule, electricCube, aluminium, refactoringModule,
-			nanoAlloy
+			nanoAlloy, dataCube, superComputingCube, modelCube, structrueCube,
+			setCube
 		);
 
 		ndOnlyItems.addAll(ndItems).removeAll(Items.serpuloItems);
