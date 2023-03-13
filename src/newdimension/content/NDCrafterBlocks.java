@@ -89,7 +89,7 @@ public class NDCrafterBlocks implements ContentList{
 		researchCenter = new GenericCrafter("research-center"){{
 			requirements(Category.crafting, ItemStack.with(
 				Items.silicon, 300,
-				NDItems.steel, 400,
+				NDItems.steel, 400
 			));
 			size = 3;
 			health = 1200;
