@@ -88,7 +88,7 @@ public class NDItems implements ContentList{
 		modelCube = new Item("model-cube", Color.valueOf("F65827")){{
 		}};
 
-		structrueCube = new Item("structure-cube", Color.valueOf("F65827")){{
+		structureCube = new Item("structure-cube", Color.valueOf("F65827")){{
 		}};
 
 		setCube = new Item("set-cube", Color.valueOf("F65827")){{
@@ -97,7 +97,7 @@ public class NDItems implements ContentList{
 		ndItems.addAll(
 			iron, radioactiveSubstances, hypernuclearCondensates,
 			steel, iterativeModule, electricCube, aluminium, refactoringModule,
-			nanoAlloy, dataCube, superComputingCube, modelCube, structrueCube,
+			nanoAlloy, dataCube, superComputingCube, modelCube, structureCube,
 			setCube
 		);
 
