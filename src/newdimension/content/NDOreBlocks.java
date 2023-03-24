@@ -10,13 +10,13 @@ public class NDOreBlocks implements ContentList{
 
 	@Override
 	public void load(){
-		oreIron = new OreBlock("ore-iron", NDItems.iron){{
+		oreIron = new OreBlock("ore_iron", NDItems.iron){{
 			oreDefault = true;
 			oreThreshold = 0.838f;
 			oreScale = 24.39528f;
 		}};
 
-		oreAluminium = new OreBlock("ore-aluminium", NDItems.aluminium){{
+		oreAluminium = new OreBlock("ore_aluminium", NDItems.aluminium){{
 			oreDefault = true;
 			oreThreshold = 0.843f;
 			oreScale = 24.56281f;

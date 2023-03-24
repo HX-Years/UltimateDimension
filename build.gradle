@@ -8,6 +8,7 @@ sourceCompatibility = JavaVersion.VERSION_16
 sourceSets.main.java.srcDirs = ["src"]
 
 repositories{
+    mavenLocal()
     mavenCentral()
     maven{ url 'https://www.jitpack.io' }
 }
@@ -15,8 +16,22 @@ repositories{
 ext{
     //the build number that this mod is made for
     mindustryVersion = 'v141'
+    arcVersion = "v141"
+    uncVersion = "1.7.0"
     jabelVersion = "93fde537c7"
     sdkRoot = System.getenv("ANDROID_HOME") ?: System.getenv("ANDROID_SDK_ROOT")
+}
+
+tasks.withType(JavaCompile){
+    options.fork = true
+    options.forkOptions.jvmArgs.addAll([
+    "--add-opens", "jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+    "--add-opens", "jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+    "--add-opens", "jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
+    "--add-opens", "jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED",
+    "--add-opens", "jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+    "--add-opens", "jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
+    ])
 }
 
 //java 8 backwards compatibility flag
@@ -31,6 +46,17 @@ dependencies{
     compileOnly "com.github.Anuken.MindustryJitpack:core:$mindustryVersion"
 
     annotationProcessor "com.github.Anuken:jabel:$jabelVersion"
+    
+    compileOnly "com.github.EB-wilson.UniverseCore:mindustry:$uncVersion"
+    compileOnly "com.github.EB-wilson.UniverseCore:utilties:$uncVersion"
+    compileOnly "com.github.EB-wilson.UniverseCore:abstract:$uncVersion"
+    compileOnly "com.github.EB-wilson.UniverseCore:implabstract:$uncVersion"
+    compileOnly "com.github.EB-wilson.UniverseCore:dynamilizer:$uncVersion"
+    compileOnly "com.github.EB-wilson.UniverseCore:annotations:$uncVersion"
+
+    implementation 'org.jetbrains:annotations:23.0.0'
+
+    annotationProcessor "com.github.EB-wilson.UniverseCore:annotations:$uncVersion"
 }
 
 //force arc version

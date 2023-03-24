@@ -4,9 +4,20 @@ import mindustry.content.*;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.production.*;
+import newdimension.NewDimension;
+import universecore.components.blockcomp.FactoryBuildComp;
+import universecore.util.UncLiquidStack;
+import universecore.world.consumers.BaseConsume;
+import universecore.world.consumers.BaseConsumers;
+import universecore.world.consumers.ConsumeItems;
+import universecore.world.consumers.ConsumeType;
+import universecore.world.lightnings.LightningContainer;
+import universecore.world.lightnings.generator.CircleGenerator;
+import universecore.world.lightnings.generator.VectorLightningGenerator;
+import universecore.world.producers.ProduceType;
 
 public class NDCrafterBlocks implements ContentList{
-	
+
 	public static Block steelFactory,//钢厂
 	electricCubeBaler,//电立方打包机
 	superNuclearMachine,//超核机
@@ -16,7 +27,7 @@ public class NDCrafterBlocks implements ContentList{
 
 	@Override
 	public void load(){
-		steelFactory = new GenericCrafter("steel-factory"){{
+		steelFactory = new GenericCrafter("steel_factory"){{
 			requirements(Category.crafting, ItemStack.with(
 				Items.lead, 15,
 				NDItems.iron, 30
@@ -32,7 +43,7 @@ public class NDCrafterBlocks implements ContentList{
 			outputItem = new ItemStack(NDItems.steel, 1);
 		}};
 
-		electricCubeBaler = new GenericCrafter("electric-cube-baler"){{
+		electricCubeBaler = new GenericCrafter("electric_cube_baler"){{
 			requirements(Category.crafting, ItemStack.with(
 				Items.lead, 20,
 				Items.tungsten, 30,
@@ -47,7 +58,7 @@ public class NDCrafterBlocks implements ContentList{
 			outputItem = new ItemStack(NDItems.electricCube, 2);
 		}};
 
-		superNuclearMachine = new GenericCrafter("super-nuclear-machine"){{
+		superNuclearMachine = new GenericCrafter("super_nuclear_machine"){{
 			requirements(Category.crafting, ItemStack.with(
 				Items.tungsten, 30,
 				NDItems.steel, 20,
@@ -67,7 +78,7 @@ public class NDCrafterBlocks implements ContentList{
 			outputItem = new ItemStack(NDItems.hypernuclearCondensates, 2);
 		}};
 
-		tungstenSteelSmelter = new GenericCrafter("tungsten-steel-smelter"){{
+		tungstenSteelSmelter = new GenericCrafter("tungsten_steel_smelter"){{
 			requirements(Category.crafting, ItemStack.with(
 				NDItems.steel, 20,
 				Items.silicon, 10
@@ -86,14 +97,67 @@ public class NDCrafterBlocks implements ContentList{
 			outputItem = new ItemStack(NDItems.tungstenSteel, 2);
 		}};
 
-		researchCenter = new GenericCrafter("research-center"){{
+		researchCenter = new GenericCrafter("research_center"){{
 			requirements(Category.crafting, ItemStack.with(
 				Items.silicon, 300,
 				NDItems.steel, 400
 			));
+			hasItems = true;
+			hasPower = true;
+			hasLiquids = true;
 			size = 3;
 			health = 1200;
-			craftTime = 120f;
+
+			/*newConsume();
+			consume.time(90f);
+			consume.power(2.2f);
+			consume.liquid(Liquids.water, 1f);
+			newProduce();
+			produce.item(NDItems.data_cube);
+
+			newConsume();
+			consume.time(90f);
+			consume.power(3.6f);
+			consume.item(NDItems.data_cube, 1);
+			consume.liquid(Liquids.water, 1f);
+			newProduce();
+			produce.item(NDItems.supercomputing_cube);
+
+			newConsume();
+			consume.time(120f);
+			consume.power(5.7f);
+			consume.items(ItemStack.with(
+				NDItems.data_cube, 1,
+				NDItems.supercomputing_cube, 1
+			));
+			consume.liquid(Liquids.water, 1f);
+			newProduce();
+			produce.item(NDItems.model_cube);
+
+			newConsume();
+			consume.time(120f);
+			consume.power(8f);
+			consume.items(ItemStack.with(
+				NDItems.data_cube, 1,
+				NDItems.super_computing, 1,
+				NDItems.model_cube, 1
+			));
+			consume.liquid(Liquids.water, 1f);
+			newProduce();
+			produce.item(NDItems.structure_cube);
+
+			newConsume();
+			consume.time(150f);
+			consume.power(10f);
+			consume.items(ItemStack.with(
+				NDItems.data_cube, 1,
+				NDItems.supercomputing, 1,
+				NDItems.model_cube, 1,
+				NDItems.structure, 1
+			));
+			consume.liquid(Liquids.water, 3f);
+			newProduce();
+			produce.item(NDItems.set_cube);*/
 		}};
 	}
 }

@@ -16,7 +16,7 @@ public class NDTurrets implements ContentList{
 
 	@Override
 	public void load(){
-		huiCan = new ItemTurret("hui-can"){{
+		huiCan = new ItemTurret("hui_can"){{
 			requirements(Category.turret, ItemStack.with(
 				Items.lead, 500,
 				NDItems.tungstenSteel, 2000,
@@ -47,7 +47,7 @@ public class NDTurrets implements ContentList{
 			limitRange();
 		}};
 
-		superconductingElectromagneticGun = new ItemTurret("superconducting-electromagnetic-gun"){{
+		superconductingElectromagneticGun = new ItemTurret("superconducting_electromagnetic_gun"){{
 			requirements(Category.turret, ItemStack.with(
 				Items.lead, 1000,
 				Items.silicon, 1600,
@@ -85,7 +85,7 @@ public class NDTurrets implements ContentList{
 			));
 		}};
 
-		emberFire = new LiquidTurret("ember-fire"){{
+		emberFire = new LiquidTurret("ember_fire"){{
 			requirements(Category.turret, ItemStack.with(
 					NDItems.tungstenSteel, 2000
 			));

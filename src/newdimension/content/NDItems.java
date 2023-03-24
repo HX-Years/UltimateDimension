@@ -40,11 +40,11 @@ public class NDItems implements ContentList{
 			cost = 1.3f;
 		}};
 
-		radioactiveSubstances = new Item("radioactive-substances", Color.valueOf("999C77")){{
+		radioactiveSubstances = new Item("radioactive_substances", Color.valueOf("999C77")){{
 			radioactivity = 1f;
 		}};
 
-		hypernuclearCondensates = new Item("hyper-nuclear-condensates", Color.valueOf("E88774")){{
+		hypernuclearCondensates = new Item("hyper_nuclear_condensates", Color.valueOf("E88774")){{
 			explosiveness = 2f;
 			radioactivity = 5f;
 		}};
@@ -53,15 +53,15 @@ public class NDItems implements ContentList{
 			cost = 1.45f;
 		}};
 
-		iterativeModule = new Item("iterative-module", Color.valueOf("E88345")){{
+		iterativeModule = new Item("iterative_module", Color.valueOf("E88345")){{
 			cost = 1.5f;
 		}};
 
-		electricCube = new Item("electric-cube", Color.valueOf("E75665")){{
+		electricCube = new Item("electric_cube", Color.valueOf("E75665")){{
 			charge = 1f;
 		}};
 
-		tungstenSteel = new Item("tungsten-steel", Color.valueOf("666A72")){{
+		tungstenSteel = new Item("tungsten_steel", Color.valueOf("666A72")){{
 			charge = 0.2f;
 			cost = 1.2f;
 		}};
@@ -71,30 +71,32 @@ public class NDItems implements ContentList{
 			hardness = 1;
 		}};
 
-		refactoringModule = new Item("refactoring-module", Color.valueOf("F65782")){{
+		refactoringModule = new Item("refactoring_module", Color.valueOf("F65782")){{
 			cost = 1f;
 		}};
 
-		nanoAlloy = new Item("nano-alloy", Color.valueOf("F65287")){{
+		nanoAlloy = new Item("nano_alloy", Color.valueOf("F65287")){{
 			cost = 1.2f;
 		}};
 
-		dataCube = new Item("data-cube", Color.valueOf("F65827")){{
+		dataCube = new Item("data_cube", Color.valueOf("F65827")){{
 		}};
 
-		superComputingCube = new Item("supercomputing-cube", Color.valueOf("F65827")){{
+		superComputingCube = new Item("supercomputing_cube", Color.valueOf("F65827")){{
 		}};
 
-		modelCube = new Item("model-cube", Color.valueOf("F65827")){{
+		modelCube = new Item("model_cube", Color.valueOf("F65827")){{
 		}};
 
-		structureCube = new Item("structure-cube", Color.valueOf("F65827")){{
+		structureCube = new Item("structure_cube", Color.valueOf("F65827")){{
 		}};
 
-		setCube = new Item("set-cube", Color.valueOf("F65827")){{
+		setCube = new Item("set_cube", Color.valueOf("F65827")){{
 		}};
 
 		ndItems.addAll(
+			Items.copper, Items.lead, Items.graphite, Items.coal, Items.titanium, Items.thorium, Items.silicon,
+			Items.sand, Items.metaglass,
 			iron, radioactiveSubstances, hypernuclearCondensates,
 			steel, iterativeModule, electricCube, aluminium, refactoringModule,
 			nanoAlloy, dataCube, superComputingCube, modelCube, structureCube,
@@ -102,5 +104,6 @@ public class NDItems implements ContentList{
 		);
 
 		ndOnlyItems.addAll(ndItems).removeAll(Items.serpuloItems);
+		ndOnlyItems.addAll(ndItems).removeAll(Items.erekirItems);
 	}
 }

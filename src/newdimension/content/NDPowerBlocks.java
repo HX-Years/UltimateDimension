@@ -17,7 +17,7 @@ public class NDPowerBlocks implements ContentList{
 
 	@Override
 	public void load(){
-		batteryStack = new Battery("battery-stack"){{
+		batteryStack = new Battery("battery_stack"){{
 			requirements(Category.power, ItemStack.with(
 				NDItems.steel, 10,
 				NDItems.tungstenSteel, 15,
@@ -28,7 +28,7 @@ public class NDPowerBlocks implements ContentList{
 			baseExplosiveness = 18f;
 		}};
 
-		batteryStackLarge = new Battery("battery-stack-large"){{
+		batteryStackLarge = new Battery("battery_stack_large"){{
 			requirements(Category.power, ItemStack.with(
 				NDItems.tungstenSteel, 30,
 				NDItems.iterativeModule, 1,
@@ -39,7 +39,7 @@ public class NDPowerBlocks implements ContentList{
 			baseExplosiveness = 50f;
 		}};
 
-		nuclearFusionReactor = new ImpactReactor("nuclear-fusion-reghctor"){{
+		nuclearFusionReactor = new ImpactReactor("nuclear_fusion_reghctor"){{
 			requirements(Category.power, ItemStack.with(
 				NDItems.steel, 200,
 				NDItems.tungstenSteel, 300,
@@ -62,7 +62,7 @@ public class NDPowerBlocks implements ContentList{
 			maxNodes = 10;
 		}};*/
 
-		powerGridNode = new PowerNode("power-grid-node"){{
+		powerGridNode = new PowerNode("power_grid_node"){{
 			requirements(Category.power, ItemStack.with(
 				Items.titanium, 5,
 				Items.lead, 10,
@@ -73,7 +73,7 @@ public class NDPowerBlocks implements ContentList{
 			laserRange = 15f;
 		}};
 
-		healNode = new NDPowerNode("heal-node"){{
+		healNode = new NDPowerNode("heal_node"){{
 			requirements(Category.power, ItemStack.with(
 				Items.silicon, 6,
 				NDItems.nanoAlloy, 12,

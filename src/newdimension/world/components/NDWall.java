@@ -1,12 +1,10 @@
-package newdimension.world.components;
+/*package newdimension.world.components;
 
-import newdimension.world.blocks.defense.NDWall;
+import mindustry.world.meta.Stats;
+import newdimension.world.meta.NDStat;
+import universecore.annotations.Annotations;
 
-//import mindustry.world.meta.Stats;
-//import newdimension.world.meta.NDStat;
-//import universecore.annotations.Annotations;
-
-/*public interface SelfHealingComp{
+public interface NDWall{
 	@Annotations.BindField("selfHealing")
 	default boolean selfHealing{
 		return false;
@@ -21,16 +19,5 @@ import newdimension.world.blocks.defense.NDWall;
 			if(maxEnergyPressure() > 0) stats.add(SglStat.maxEnergyPressure, maxEnergyPressure());
 		}
 	}
-}*/
-
-
-public class SelfHealing extends ComponentBase<NDWall.NDWallBuild> {
-	@Override
-	public void onUpdate(NDWall.NDWallBuild nd) {
-		float thisH = nd.health;
-		float maxH = nd.maxHealth;
-		if (thisH > 0 && thisH <= maxH * 0.4) {
-			nd.health += 1;
-		}
-	}
 }
+*/

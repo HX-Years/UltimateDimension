@@ -10,14 +10,14 @@ public class NDCoreBlocks implements ContentList{
 
 	@Override
 	public void load() {
-		hanCore = new CoreBlock("han-core"){{
+		hanCore = new CoreBlock("han_core"){{
 			requirements(Category.effect, ItemStack.with(
 				NDItems.steel, 1000,
 				NDItems.aluminium, 200
 			));
 			alwaysUnlocked = true;
 			isFirstTier = true;
-			unitType = UnitTypes.alpha;
+			unitType = UnitTypes.gamma;
 			health = 2000;
 			itemCapacity = 10000;
 			size = 3;

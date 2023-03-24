@@ -5,7 +5,7 @@ import mindustry.content.*;
 import mindustry.type.*;
 
 public class NDLiquids implements ContentList{
-	public static Liquid nuclearWastewater,//核废水
+	public static Liquid nuclearWasteWater,//核废水
 	lava,//岩浆
 	superFrozenLiquid;//超冻液
 
@@ -19,7 +19,7 @@ public class NDLiquids implements ContentList{
 
 	@Override
 	public void load(){
-		nuclearWastewater = new CellLiquid("nuclear-waste-water", Color.valueOf("8ECC47")){{
+		nuclearWasteWater = new CellLiquid("nuclear_waste_water", Color.valueOf("8ECC47")){{
 			heatCapacity = 0.4f;
 			viscosity = 0.5f;
 			moveThroughBlocks = true;
@@ -35,7 +35,7 @@ public class NDLiquids implements ContentList{
 			//effect = StatusEffects.;
 		}};
 
-		superFrozenLiquid = new Liquid("super-fronze-liquid", Color.valueOf("365D99")){{
+		superFrozenLiquid = new Liquid("super_fronze_liquid", Color.valueOf("365D99")){{
 			temperature = 0.02f;
 			heatCapacity = 1.6f;
 			viscosity = 0.5f;
