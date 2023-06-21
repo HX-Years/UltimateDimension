@@ -1,4 +1,6 @@
-apply plugin: "java"
+plugins {
+    id "java"
+}
 
 version '1.0'
 
@@ -15,9 +17,9 @@ repositories{
 
 ext{
     //the build number that this mod is made for
-    mindustryVersion = 'v141'
-    arcVersion = "v141"
-    uncVersion = "1.7.0"
+    mindustryVersion = 'v145'
+    arcVersion = "v145"
+    uncVersion = "1.8.1"
     jabelVersion = "93fde537c7"
     sdkRoot = System.getenv("ANDROID_HOME") ?: System.getenv("ANDROID_SDK_ROOT")
 }
