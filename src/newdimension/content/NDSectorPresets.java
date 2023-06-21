@@ -1,4 +1,4 @@
-package newdimension.content;
+/*package newdimension.content;
 
 import mindustry.type.SectorPreset;
 
@@ -15,4 +15,4 @@ public class NDSectorPresets implements ContentList{
 			addStartingItems = true;
 		}};
 	}
-}
+}*/

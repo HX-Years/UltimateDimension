@@ -8,8 +8,8 @@ import static newdimension.content.NDCrafterBlocks.*;
 import static newdimension.content.NDDefenseBlocks.*;
 import static newdimension.content.NDPowerBlocks.*;
 import static newdimension.content.NDTurrets.*;
-import static newdimension.content.NDCoreBlocks.*;
-import static newdimension.content.NDSectorPresets.*;
+//import static newdimension.content.NDCoreBlocks.*;
+//import static newdimension.content.NDSectorPresets.*;
 
 public class NDTechTree implements ContentList{
 	@Override
