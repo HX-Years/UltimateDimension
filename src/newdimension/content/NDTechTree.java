@@ -15,14 +15,16 @@ public class NDTechTree implements ContentList{
 	@Override
 	public void load(){
 		{
-			NDPlanets.ND.techTree = nodeRoot("ND", hanCore, () -> {
-				node(tungstenWall, () -> {
-					node(tungstenWallLarge, () -> {
-						node(nanoAlloyWall, () -> {
-							node(nanoAlloyWallLarge, () -> {});
-						});
-					});
-				});
+			//NDPlanets.ND.techTree = nodeRoot("ND", hanCore, () -> {
+			    node(surgeWallLarge, () -> {
+				    node(tungstenWall, () -> {
+				    	node(tungstenWallLarge, () -> {
+				    		node(nanoAlloyWall, () -> {
+				    			node(nanoAlloyWallLarge, () -> {});
+				    		});
+				    	});
+			    	});
+		    	});
 
 				nodeProduce(Items.copper, () -> {
 					nodeProduce(Items.lead, () -> {
@@ -81,7 +83,7 @@ public class NDTechTree implements ContentList{
 				});
 				
 				node(landingArea, () -> {});
-			});
+			//});
 		}
 	}
 }

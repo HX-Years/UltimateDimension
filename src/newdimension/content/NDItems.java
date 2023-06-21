@@ -94,16 +94,16 @@ public class NDItems implements ContentList{
 		setCube = new Item("set_cube", Color.valueOf("F65827")){{
 		}};
 
-		ndItems.addAll(
+		/*ndItems.addAll(
 			Items.copper, Items.lead, Items.graphite, Items.coal, Items.titanium, Items.thorium, Items.silicon,
 			Items.sand, Items.metaglass,
 			iron, radioactiveSubstances, hypernuclearCondensates,
 			steel, iterativeModule, electricCube, aluminium, refactoringModule,
 			nanoAlloy, dataCube, superComputingCube, modelCube, structureCube,
 			setCube
-		);
+		);*/
 
-		ndOnlyItems.addAll(ndItems).removeAll(Items.serpuloItems);
-		ndOnlyItems.addAll(ndItems).removeAll(Items.erekirItems);
+		//ndOnlyItems.addAll(ndItems).removeAll(Items.serpuloItems);
+		//ndOnlyItems.addAll(ndItems).removeAll(Items.erekirItems);
 	}
 }

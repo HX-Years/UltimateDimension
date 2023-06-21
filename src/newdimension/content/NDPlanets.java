@@ -1,4 +1,4 @@
-package newdimension.content;
+/*package newdimension.content;
 
 import arc.graphics.*;
 import mindustry.content.*;
@@ -28,7 +28,7 @@ public class NDPlanets implements ContentList{
 				Color.valueOf("ffe371"),
 				Color.valueOf("f4ee8e")
 			);
-		}};*/
+		}};
 
 		ND = new Planet("ND", Planets.sun, 1f, 3){{
 			generator = new NDPlanetGenerator();
@@ -65,4 +65,4 @@ public class NDPlanets implements ContentList{
 			unlockedOnLand.add(NDCoreBlocks.hanCore);
 		}};
 	}
-}
+}*/

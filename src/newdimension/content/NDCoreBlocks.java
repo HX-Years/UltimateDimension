@@ -1,4 +1,4 @@
-package newdimension.content;
+/*package newdimension.content;
 
 import mindustry.content.*;
 import mindustry.type.*;
@@ -24,4 +24,4 @@ public class NDCoreBlocks implements ContentList{
 			unitCapModifier = 12;
 		}};
 	}
-}
+}*/
