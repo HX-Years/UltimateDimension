@@ -4,7 +4,7 @@ author: "HX-Year"
 main: "newdimension.NewDimension"
 description: "A Java mod."
 version: 1.0
-minGameVersion: 140
+minGameVersion: 145
 hideBrowser: true
 dependencies: ["universe-core"]
 java: true
