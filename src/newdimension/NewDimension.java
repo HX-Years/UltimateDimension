@@ -11,9 +11,9 @@ public class NewDimension extends Mod{
 	public static final ContentList[] modContents = new ContentList[]{
 		new NDItems(),
 		new NDLiquids(),
-		new NDPlanets(),
-		new NDSectorPresets(),
-		new NDCoreBlocks(),
+		//new NDPlanets(),
+		//new NDSectorPresets(),
+		//new NDCoreBlocks(),
 		new NDTurrets(),
 		new NDDefenseBlocks(),
 		new NDCrafterBlocks(),

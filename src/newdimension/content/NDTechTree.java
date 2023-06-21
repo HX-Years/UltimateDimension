@@ -82,7 +82,7 @@ public class NDTechTree implements ContentList{
 					node(frost, () -> {});
 				});
 				
-				node(landingArea, () -> {});
+				//node(landingArea, () -> {});
 			//});
 		}
 	}
