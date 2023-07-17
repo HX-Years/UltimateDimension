@@ -5,7 +5,7 @@ import mindustry.mod.Mod;
 import newdimension.content.*;
 import universecore.annotations.Annotations;
 
-@Annotations.ImportUNC(requireVersion = "1.7.0")
+@Annotations.ImportUNC(requireVersion = "1.8.1")
 public class NewDimension extends Mod{
 	public static String ModName = "new-dimension";
 	public static final ContentList[] modContents = new ContentList[]{
