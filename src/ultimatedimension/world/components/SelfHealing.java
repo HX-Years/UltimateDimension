@@ -1,7 +1,6 @@
-package newdimension.world.components;
+package ultimatedimension.world.components;
 
-import newdimension.world.blocks.defense.NDWall;
-
+import ultimatedimension.world.blocks.defense.UDWall.UDWallBuild;
 //import mindustry.world.meta.Stats;
 //import newdimension.world.meta.NDStat;
 //import universecore.annotations.Annotations;
@@ -24,13 +23,15 @@ import newdimension.world.blocks.defense.NDWall;
 }*/
 
 
-public class SelfHealing extends ComponentBase<NDWall.NDWallBuild> {
+
+
+public class SelfHealing extends ComponentBase<UDWallBuild> {
 	@Override
-	public void onUpdate(NDWall.NDWallBuild nd) {
-		float thisH = nd.health;
-		float maxH = nd.maxHealth;
+	public void onUpdate(UDWallBuild ud) {
+		float thisH = ud.health;
+		float maxH = ud.maxHealth;
 		if (thisH > 0 && thisH <= maxH * 0.4) {
-			nd.health += 1;
+			ud.health += 1;
 		}
 	}
 }

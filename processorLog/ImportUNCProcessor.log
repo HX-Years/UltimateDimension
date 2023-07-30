@@ -1,16 +1,16 @@
 processor: ImportUNCProcessor (full class name: universecore.annotations.ImportUNCProcessor)
-time: Fri Mar 24 16:40:37 GMT 2023
+time: Sun Jul 30 15:30:02 UTC 2023
 
 -----------------------------------------
 annotation: universecore.annotations.Annotations.ImportUNC
 -----------------------------------------
 
-> class: newdimension.NewDimension
+> class: ultimatedimension.UltimateDimension
   1| 
-  2| @Annotations.ImportUNC(requireVersion = "1.7.0")
-  3| public class NewDimension extends Mod {
+  2| @Annotations.ImportUNC(requireVersion = "1.8.4")
+  3| public class UltimateDimension extends Mod {
   4|     private static byte $status$;
-  5|     public static String ModName;
+  5|     public static final String ModName;
   6|     public static final ContentList[] modContents;
   7|     static {
   8|         String $libVersionValue = "0.0.0";
@@ -32,7 +32,7 @@ annotation: universecore.annotations.Annotations.ImportUNC
  24|                         if ($name.equals("universe-core")) {
  25|                             $libFileTemp = $file;
  26|                             $libVersionValue = $version;
- 27|                         } else if ($fest.has("main") && $fest.getString("main").equals(newdimension.NewDimension.class.getName())) {
+ 27|                         } else if ($fest.has("main") && $fest.getString("main").equals(ultimatedimension.UltimateDimension.class.getName())) {
  28|                             $modFile = $file;
  29|                         }
  30|                     }
@@ -44,7 +44,7 @@ annotation: universecore.annotations.Annotations.ImportUNC
  36|             assert $modFile != null;
  37|             arc.func.Intf<String> $versionValid = (v)->{
  38|                 String[] $lib = v.split("\\.");
- 39|                 String[] $req = "1.7.0".split("\\.");
+ 39|                 String[] $req = "1.8.4".split("\\.");
  40|                 if (Integer.parseInt($lib[0]) > Integer.parseInt($req[0])) return 2;
  41|                 for (int i = 1; i < $lib.length; i++) {
  42|                     if (Integer.parseInt($lib[i]) > Integer.parseInt($req[i])) return 0;
@@ -79,10 +79,10 @@ annotation: universecore.annotations.Annotations.ImportUNC
  71|                         $curr += "none";
  72|                         $status$ = 2;
  73|                     } else if ($upgrade) {
- 74|                         $curr += "old1.7.0";
+ 74|                         $curr += "old1.8.4";
  75|                         $status$ = 3;
  76|                     } else if ($requireOld) {
- 77|                         $curr += "new1.7.0";
+ 77|                         $curr += "new1.8.4";
  78|                         $status$ = 4;
  79|                     }
  80|                     $curr += ";";
@@ -222,9 +222,9 @@ annotation: universecore.annotations.Annotations.ImportUNC
 214|                                                         if (!$info.getString("name", "").equals("universe-core")) {
 215|                                                             mindustry.Vars.ui.showErrorMessage("not UniverseCore mod file");
 216|                                                         } else if ($versionValid.get($info.getString("version", "0.0.0")) == 1) {
-217|                                                             mindustry.Vars.ui.showErrorMessage("version was deprecated, require: 1.7.0, select: " + $info.getString("version", "0.0.0"));
+217|                                                             mindustry.Vars.ui.showErrorMessage("version was deprecated, require: 1.8.4, select: " + $info.getString("version", "0.0.0"));
 218|                                                         } else if ($versionValid.get($info.getString("version", "0.0.0")) == 2) {
-219|                                                             mindustry.Vars.ui.showErrorMessage("version was too newer, require: 1.7.0, select: " + $info.getString("version", "0.0.0"));
+219|                                                             mindustry.Vars.ui.showErrorMessage("version was too newer, require: 1.8.4, select: " + $info.getString("version", "0.0.0"));
 220|                                                         } else {
 221|                                                             try {
 222|                                                                 if ($libFile != null && $libFile.exists()) $libFile.delete();
@@ -296,9 +296,9 @@ annotation: universecore.annotations.Annotations.ImportUNC
 288|             }
 289|         }
 290|         if ($status$ == 0) {
-291|             universecore.UncCore.signup(newdimension.NewDimension.class);
-292|             ModName = "new-dimension";
-293|             modContents = new ContentList[]{new NDItems(), new NDLiquids(), new NDPlanets(), new NDSectorPresets(), new NDCoreBlocks(), new NDTurrets(), new NDDefenseBlocks(), new NDCrafterBlocks(), new NDPowerBlocks(), new NDOreBlocks(), new NDTechTree()};
+291|             universecore.UncCore.signup(ultimatedimension.UltimateDimension.class);
+292|             ModName = "ultimate-dimension";
+293|             modContents = new ContentList[]{new ultimatedimension.content.UDItems(), new ultimatedimension.content.UDLiquids(), new ultimatedimension.content.UDTurrets(), new ultimatedimension.content.UDDefenseBlocks(), new ultimatedimension.content.UDCrafterBlocks(), new ultimatedimension.content.UDPowerBlocks(), new ultimatedimension.content.UDOreBlocks(), new ultimatedimension.content.UDTechTree()};
 294|         } else {
 295|             ModName = null;
 296|             modContents = null;
@@ -307,14 +307,14 @@ annotation: universecore.annotations.Annotations.ImportUNC
 299|             } else if ($status$ == 2) {
 300|                 arc.util.Log.err("universeCore mod file was not found");
 301|             } else if ($status$ == 3) {
-302|                 arc.util.Log.err("universeCore version was deprecated, version: " + $libVersionValue + " require: 1.7.0");
+302|                 arc.util.Log.err("universeCore version was deprecated, version: " + $libVersionValue + " require: 1.8.4");
 303|             } else if ($status$ == 4) {
-304|                 arc.util.Log.err("universeCore version was too newer, version: " + $libVersionValue + " require: 1.7.0");
+304|                 arc.util.Log.err("universeCore version was too newer, version: " + $libVersionValue + " require: 1.8.4");
 305|             }
 306|         }
 307|     }
 308|     
-309|     public NewDimension() {
+309|     public UltimateDimension() {
 310|         if ($status$ != 0) return;
 311|         new INIT_INTERNAL();
 312|     }
@@ -322,17 +322,22 @@ annotation: universecore.annotations.Annotations.ImportUNC
 314|     @Override
 315|     public void loadContent() {
 316|         if ($status$ != 0) return;
-317|         Log.info("Loading some newdimension content.");
-318|         for (ContentList ndlist : NewDimension.modContents) {
-319|             ndlist.load();
+317|         Log.info(logInfo("Loading some ultimatedimension content."));
+318|         for (ContentList udlist : UltimateDimension.modContents) {
+319|             udlist.load();
 320|         }
 321|     }
 322|     
-323|     private class INIT_INTERNAL {
-324|         
-325|         public INIT_INTERNAL() {
-326|             Log.info("Loaded NewDimension constructor.");
-327|         }
-328|     }
-329| }
+323|     public static String logInfo(String info) {
+324|         if ($status$ != 0) return null;
+325|         return "[" + ModName + "]" + info;
+326|     }
+327|     
+328|     private class INIT_INTERNAL {
+329|         
+330|         public INIT_INTERNAL() {
+331|             Log.info(logInfo("Loaded UltimateDimension constructor."));
+332|         }
+333|     }
+334| }
 

@@ -1,11 +1,10 @@
-package newdimension.content;
+package ultimatedimension.content;
 
 import arc.graphics.*;
 import arc.struct.*;
-import mindustry.content.*;
 import mindustry.type.*;
 
-public class NDItems implements ContentList{
+public class UDItems implements ContentList{
 
 	public static Item iron,//铁
 	radioactiveSubstances,//放射物

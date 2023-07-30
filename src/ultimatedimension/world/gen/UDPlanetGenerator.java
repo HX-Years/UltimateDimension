@@ -1,4 +1,4 @@
-package newdimension.world.gen;
+package ultimatedimension.world.gen;
 
 import arc.graphics.Color;
 import arc.math.Angles;
@@ -33,11 +33,10 @@ import mindustry.world.Tile;
 import mindustry.world.TileGen;
 import mindustry.world.Tiles;
 import mindustry.world.blocks.environment.Floor;
-import newdimension.content.NDOreBlocks;
 
 import static mindustry.Vars.*;
 
-public class NDPlanetGenerator extends PlanetGenerator{
+public class UDPlanetGenerator extends PlanetGenerator{
   public static boolean alt = false;
 
   BaseGenerator basegen = new BaseGenerator();
@@ -448,7 +447,7 @@ public class NDPlanetGenerator extends PlanetGenerator{
     }
 
     if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 1, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.55*addscl){
-      ores.add(NDOreBlocks.oreIron);
+      ores.add(ultimatedimension.content.UDOreBlocks.oreIron);
       freScls.add(0.92f);
     }
 
@@ -463,7 +462,7 @@ public class NDPlanetGenerator extends PlanetGenerator{
     }
 
     if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 3, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.72f*addscl){
-      ores.add(NDOreBlocks.oreAluminium);
+      ores.add(ultimatedimension.content.UDOreBlocks.oreAluminium);
       freScls.add(0.85f);
     }
 

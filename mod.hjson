@@ -1,7 +1,7 @@
-displayName: "New Dimension"
-name: "new-dimension"
+displayName: "终维度(Ultimate Dimension)"
+name: "Ultimate-dimension"
 author: "HX-Year"
-main: "newdimension.NewDimension"
+main: "ultimatedimension.UltimateDimension"
 description: "A Java mod."
 version: 1.0
 minGameVersion: 145

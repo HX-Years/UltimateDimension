@@ -1,22 +1,12 @@
-package newdimension.content;
+package ultimatedimension.content;
 
-import mindustry.content.*;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.blocks.production.*;
-import newdimension.NewDimension;
-import universecore.components.blockcomp.FactoryBuildComp;
-import universecore.util.UncLiquidStack;
-import universecore.world.consumers.BaseConsume;
-import universecore.world.consumers.BaseConsumers;
-import universecore.world.consumers.ConsumeItems;
-import universecore.world.consumers.ConsumeType;
-import universecore.world.lightnings.LightningContainer;
-import universecore.world.lightnings.generator.CircleGenerator;
-import universecore.world.lightnings.generator.VectorLightningGenerator;
-import universecore.world.producers.ProduceType;
+import mindustry.content.Items;
+import mindustry.type.Category;
+import mindustry.type.ItemStack;
+import mindustry.world.Block;
+import mindustry.world.blocks.production.GenericCrafter;
 
-public class NDCrafterBlocks implements ContentList{
+public class UDCrafterBlocks implements ContentList{
 
 	public static Block steelFactory,//钢厂
 	electricCubeBaler,//电立方打包机
@@ -30,7 +20,7 @@ public class NDCrafterBlocks implements ContentList{
 		steelFactory = new GenericCrafter("steel_factory"){{
 			requirements(Category.crafting, ItemStack.with(
 				Items.lead, 15,
-				NDItems.iron, 30
+				UDItems.iron, 30
 			));
 			size = 2;
 			health = 800;
@@ -38,16 +28,16 @@ public class NDCrafterBlocks implements ContentList{
 			hasItems = true;
 			hasPower = true;
 			itemCapacity = 20;
-			consumeItem(NDItems.iron, 1);
+			consumeItem(UDItems.iron, 1);
 			consumePower(2f);
-			outputItem = new ItemStack(NDItems.steel, 1);
+			outputItem = new ItemStack(UDItems.steel, 1);
 		}};
 
 		electricCubeBaler = new GenericCrafter("electric_cube_baler"){{
 			requirements(Category.crafting, ItemStack.with(
 				Items.lead, 20,
 				Items.tungsten, 30,
-				NDItems.steel, 30));
+				UDItems.steel, 30));
 			size = 2;
 			health = 1000;
 			craftTime = 80f;
@@ -55,14 +45,14 @@ public class NDCrafterBlocks implements ContentList{
 			hasPower = true;
 			itemCapacity = 20;
 			consumePower(30f);
-			outputItem = new ItemStack(NDItems.electricCube, 2);
+			outputItem = new ItemStack(UDItems.electricCube, 2);
 		}};
 
 		superNuclearMachine = new GenericCrafter("super_nuclear_machine"){{
 			requirements(Category.crafting, ItemStack.with(
 				Items.tungsten, 30,
-				NDItems.steel, 20,
-				NDItems.iron, 30
+				UDItems.steel, 20,
+				UDItems.iron, 30
 			));
 			size = 3;
 			health = 1500;
@@ -75,12 +65,12 @@ public class NDCrafterBlocks implements ContentList{
 				new ItemStack(Items.thorium, 2)
 			);
 			consumePower(45f);
-			outputItem = new ItemStack(NDItems.hypernuclearCondensates, 2);
+			outputItem = new ItemStack(UDItems.hypernuclearCondensates, 2);
 		}};
 
 		tungstenSteelSmelter = new GenericCrafter("tungsten_steel_smelter"){{
 			requirements(Category.crafting, ItemStack.with(
-				NDItems.steel, 20,
+				UDItems.steel, 20,
 				Items.silicon, 10
 			));
 			size = 3;
@@ -90,17 +80,17 @@ public class NDCrafterBlocks implements ContentList{
 			hasPower = true;
 			itemCapacity = 20;
 			consumeItems(
-				new ItemStack(NDItems.steel, 1),
+				new ItemStack(UDItems.steel, 1),
 				new ItemStack(Items.tungsten, 1)
 			);
 			consumePower(6f);
-			outputItem = new ItemStack(NDItems.tungstenSteel, 2);
+			outputItem = new ItemStack(UDItems.tungstenSteel, 2);
 		}};
 
 		researchCenter = new GenericCrafter("research_center"){{
 			requirements(Category.crafting, ItemStack.with(
 				Items.silicon, 300,
-				NDItems.steel, 400
+				UDItems.steel, 400
 			));
 			hasItems = true;
 			hasPower = true;

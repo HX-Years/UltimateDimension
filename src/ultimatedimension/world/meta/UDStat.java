@@ -3,7 +3,7 @@
 import arc.*;
 import arc.struct.*;
 
-public class NDStat{
+public class UDStat{
 	public static final Stat
 
 	private static Stat create(String name, int index, StatCat cat){

@@ -1,12 +1,11 @@
-package newdimension.content;
+package ultimatedimension.content;
 
 import mindustry.content.*;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.power.*;
-import newdimension.world.blocks.power.*;
 
-public class NDPowerBlocks implements ContentList{
+public class UDPowerBlocks implements ContentList{
 
 	public static Block batteryStack,//电池堆
 	batteryStackLarge,//大型电池堆
@@ -19,8 +18,8 @@ public class NDPowerBlocks implements ContentList{
 	public void load(){
 		batteryStack = new Battery("battery_stack"){{
 			requirements(Category.power, ItemStack.with(
-				NDItems.steel, 10,
-				NDItems.tungstenSteel, 15,
+				UDItems.steel, 10,
+				UDItems.tungstenSteel, 15,
 				Items.silicon, 15
 			));
 			size = 3;
@@ -30,8 +29,8 @@ public class NDPowerBlocks implements ContentList{
 
 		batteryStackLarge = new Battery("battery_stack_large"){{
 			requirements(Category.power, ItemStack.with(
-				NDItems.tungstenSteel, 30,
-				NDItems.iterativeModule, 1,
+				UDItems.tungstenSteel, 30,
+				UDItems.iterativeModule, 1,
 				Items.silicon, 40
 			));
 			size = 4;
@@ -41,15 +40,15 @@ public class NDPowerBlocks implements ContentList{
 
 		nuclearFusionReactor = new ImpactReactor("nuclear_fusion_reghctor"){{
 			requirements(Category.power, ItemStack.with(
-				NDItems.steel, 200,
-				NDItems.tungstenSteel, 300,
+				UDItems.steel, 200,
+				UDItems.tungstenSteel, 300,
 				Items.metaglass, 60
 			));
 			size = 4;
 			powerProduction = 3650f;
             itemDuration = 100f;
             consumePower(100f);
-            consumeItem(NDItems.radioactiveSubstances);
+            consumeItem(UDItems.radioactiveSubstances);
             consumeLiquid(Liquids.water, 0.75f);
 		}};
 		//待实现电量恢复
@@ -73,11 +72,11 @@ public class NDPowerBlocks implements ContentList{
 			laserRange = 15f;
 		}};
 
-		healNode = new NDPowerNode("heal_node"){{
+		healNode = new ultimatedimension.world.blocks.power.UDPowerNode("heal_node"){{
 			requirements(Category.power, ItemStack.with(
 				Items.silicon, 6,
-				NDItems.nanoAlloy, 12,
-				NDItems.steel, 8
+				UDItems.nanoAlloy, 12,
+				UDItems.steel, 8
 			));
 			consumesPower = true;
 			consumePower(1.5f);

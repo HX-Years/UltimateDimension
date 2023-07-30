@@ -1,4 +1,4 @@
-package newdimension.content;
+package ultimatedimension.content;
 
 import mindustry.content.*;
 import mindustry.entities.bullet.*;
@@ -7,7 +7,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.defense.turrets.*;
 
-public class NDTurrets implements ContentList{
+public class UDTurrets implements ContentList{
 	
 	public static Block huiCan,//毁残
 	superconductingElectromagneticGun,//超导电磁炮
@@ -19,12 +19,12 @@ public class NDTurrets implements ContentList{
 		huiCan = new ItemTurret("hui_can"){{
 			requirements(Category.turret, ItemStack.with(
 				Items.lead, 500,
-				NDItems.tungstenSteel, 2000,
-				NDItems.aluminium, 1000,
-				NDItems.steel, 1200
+				UDItems.tungstenSteel, 2000,
+				UDItems.aluminium, 1000,
+				UDItems.steel, 1200
 			));
 			ammo(
-				NDItems.tungstenSteel, new BasicBulletType(4f, 200){{
+				UDItems.tungstenSteel, new BasicBulletType(4f, 200){{
 					width = 7f;
 					height = 9f;
 					lifetime = 10f;
@@ -51,11 +51,11 @@ public class NDTurrets implements ContentList{
 			requirements(Category.turret, ItemStack.with(
 				Items.lead, 1000,
 				Items.silicon, 1600,
-				NDItems.tungstenSteel, 2200,
-				NDItems.aluminium, 850
+				UDItems.tungstenSteel, 2200,
+				UDItems.aluminium, 850
 			));
 			ammo(
-				NDItems.tungstenSteel, new BasicBulletType(10f, 10000f){{
+				UDItems.tungstenSteel, new BasicBulletType(10f, 10000f){{
 					width = 8f;
 					height = 10f;
 					lifetime = 1800f;
@@ -65,7 +65,7 @@ public class NDTurrets implements ContentList{
 			size = 6;
 			hasPower = true;
 			consumePower(12f);
-			consumeLiquid(NDLiquids.superFrozenLiquid, 100f);
+			consumeLiquid(UDLiquids.superFrozenLiquid, 100f);
 			shoot = new ShootAlternate(3.5f);
 			shootY = 3f;
 			reload = 20f;
@@ -81,13 +81,13 @@ public class NDTurrets implements ContentList{
 
 		frost = new Turret("frost"){{
 			requirements(Category.turret, ItemStack.with(
-					NDItems.tungstenSteel, 500
+					UDItems.tungstenSteel, 500
 			));
 		}};
 
 		emberFire = new LiquidTurret("ember_fire"){{
 			requirements(Category.turret, ItemStack.with(
-					NDItems.tungstenSteel, 2000
+					UDItems.tungstenSteel, 2000
 			));
 		}};
 	}

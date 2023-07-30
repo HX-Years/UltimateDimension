@@ -1,17 +1,17 @@
-package newdimension.content;
+package ultimatedimension.content;
 
 import mindustry.content.Items;
 import mindustry.content.Liquids;
 import static mindustry.content.Blocks.*;
 import static mindustry.content.TechTree.*;
-import static newdimension.content.NDCrafterBlocks.*;
-import static newdimension.content.NDDefenseBlocks.*;
-import static newdimension.content.NDPowerBlocks.*;
-import static newdimension.content.NDTurrets.*;
+import static ultimatedimension.content.UDCrafterBlocks.*;
+import static ultimatedimension.content.UDDefenseBlocks.*;
+import static ultimatedimension.content.UDPowerBlocks.*;
+import static ultimatedimension.content.UDTurrets.*;
 //import static newdimension.content.NDCoreBlocks.*;
 //import static newdimension.content.NDSectorPresets.*;
 
-public class NDTechTree implements ContentList{
+public class UDTechTree implements ContentList{
 	@Override
 	public void load(){
 		{
@@ -28,17 +28,17 @@ public class NDTechTree implements ContentList{
 
 				nodeProduce(Items.copper, () -> {
 					nodeProduce(Items.lead, () -> {
-						nodeProduce(NDItems.iron, () -> {
-							nodeProduce(NDItems.aluminium, () -> {});
-							nodeProduce(NDItems.steel, () -> {
-								nodeProduce(NDItems.tungstenSteel, () -> {
-									nodeProduce(NDItems.radioactiveSubstances, () -> {
-										nodeProduce(NDItems.hypernuclearCondensates, () -> {});
+						nodeProduce(UDItems.iron, () -> {
+							nodeProduce(UDItems.aluminium, () -> {});
+							nodeProduce(UDItems.steel, () -> {
+								nodeProduce(UDItems.tungstenSteel, () -> {
+									nodeProduce(UDItems.radioactiveSubstances, () -> {
+										nodeProduce(UDItems.hypernuclearCondensates, () -> {});
 									});
-									nodeProduce(NDItems.electricCube, () -> {
-										nodeProduce(NDItems.refactoringModule, () -> {});
+									nodeProduce(UDItems.electricCube, () -> {
+										nodeProduce(UDItems.refactoringModule, () -> {});
 									});
-									nodeProduce(NDItems.iterativeModule, () -> {});
+									nodeProduce(UDItems.iterativeModule, () -> {});
 								});
 							});
 						});
@@ -56,9 +56,9 @@ public class NDTechTree implements ContentList{
 				});
 
 				nodeProduce(Liquids.water, () -> {
-					nodeProduce(NDLiquids.lava, () -> {
-						nodeProduce(NDLiquids.nuclearWasteWater, () -> {
-							nodeProduce(NDLiquids.superFrozenLiquid, () -> {});
+					nodeProduce(UDLiquids.lava, () -> {
+						nodeProduce(UDLiquids.nuclearWasteWater, () -> {
+							nodeProduce(UDLiquids.superFrozenLiquid, () -> {});
 						});
 					});
 				});

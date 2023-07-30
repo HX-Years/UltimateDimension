@@ -1,0 +1,18 @@
+processor: EntryProcessor (full class name: universecore.annotations.EntryProcessor)
+time: Sun Jul 30 15:30:02 UTC 2023
+
+-----------------------------------------
+annotation: universecore.annotations.Annotations.ImplEntries
+-----------------------------------------
+
+> class: ultimatedimension.world.blocks.UDBlock
+1| 
+2| @Annotations.ImplEntries
+3| public class UDBlock extends Block {
+4|     
+5|     public UDBlock(String name) {
+6|         super(name);
+7|         update = true;
+8|     }
+9| }
+

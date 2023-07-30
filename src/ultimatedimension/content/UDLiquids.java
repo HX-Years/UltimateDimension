@@ -1,10 +1,10 @@
-package newdimension.content;
+package ultimatedimension.content;
 
 import arc.graphics.*;
 import mindustry.content.*;
 import mindustry.type.*;
 
-public class NDLiquids implements ContentList{
+public class UDLiquids implements ContentList{
 	public static Liquid nuclearWasteWater,//核废水
 	lava,//岩浆
 	superFrozenLiquid;//超冻液
