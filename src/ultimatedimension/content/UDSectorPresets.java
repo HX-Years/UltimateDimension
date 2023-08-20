@@ -1,18 +1,18 @@
-/*package newdimension.content;
+package ultimatedimension.content;
 
 import mindustry.type.SectorPreset;
 
-import static newdimension.content.NDPlanets.*;
+import static ultimatedimension.content.UDPlanets.*;
 
-public class NDSectorPresets implements ContentList{
+public class UDSectorPresets implements ContentList{
 	public static SectorPreset landingArea;
 
 	@Override
 	public void load(){
-		landingArea = new SectorPreset("landingArea", ND, 15){{
+		landingArea = new SectorPreset("landingArea", UD, 15){{
 			alwaysUnlocked = true;
 			difficulty = 1;
 			addStartingItems = true;
 		}};
 	}
-}*/
+}

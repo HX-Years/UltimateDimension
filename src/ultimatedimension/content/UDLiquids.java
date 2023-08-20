@@ -1,8 +1,10 @@
 package ultimatedimension.content;
 
-import arc.graphics.*;
-import mindustry.content.*;
-import mindustry.type.*;
+import arc.graphics.Color;
+import mindustry.content.Liquids;
+import mindustry.content.StatusEffects;
+import mindustry.type.CellLiquid;
+import mindustry.type.Liquid;
 
 public class UDLiquids implements ContentList{
 	public static Liquid nuclearWasteWater,//核废水

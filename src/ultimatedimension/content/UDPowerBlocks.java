@@ -1,9 +1,13 @@
 package ultimatedimension.content;
 
-import mindustry.content.*;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.blocks.power.*;
+import mindustry.content.Items;
+import mindustry.content.Liquids;
+import mindustry.type.Category;
+import mindustry.type.ItemStack;
+import mindustry.world.Block;
+import mindustry.world.blocks.power.Battery;
+import mindustry.world.blocks.power.ImpactReactor;
+import mindustry.world.blocks.power.PowerNode;
 
 public class UDPowerBlocks implements ContentList{
 

@@ -1,19 +1,20 @@
-/*package newdimension.content;
+package ultimatedimension.content;
 
 import mindustry.content.*;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.storage.*;
 
-public class NDCoreBlocks implements ContentList{
+public class UDCoreBlocks implements ContentList{
+
 	public static Block hanCore;
 
 	@Override
 	public void load() {
 		hanCore = new CoreBlock("han_core"){{
 			requirements(Category.effect, ItemStack.with(
-				NDItems.steel, 1000,
-				NDItems.aluminium, 200
+				UDItems.steel, 1000,
+				UDItems.aluminium, 200
 			));
 			alwaysUnlocked = true;
 			isFirstTier = true;
@@ -24,4 +25,4 @@ public class NDCoreBlocks implements ContentList{
 			unitCapModifier = 12;
 		}};
 	}
-}*/
+}

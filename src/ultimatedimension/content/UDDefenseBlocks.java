@@ -1,8 +1,9 @@
 package ultimatedimension.content;
 
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.blocks.defense.*;
+import mindustry.type.Category;
+import mindustry.type.ItemStack;
+import mindustry.world.Block;
+import mindustry.world.blocks.defense.Wall;
 
 public class UDDefenseBlocks implements ContentList{
 

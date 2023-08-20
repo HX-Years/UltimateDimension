@@ -1,19 +1,20 @@
-/*package newdimension.content;
+package ultimatedimension.content;
 
-import arc.graphics.*;
-import mindustry.content.*;
-import mindustry.game.*;
-import mindustry.graphics.g3d.*;
-import mindustry.maps.planet.SerpuloPlanetGenerator;
-import mindustry.type.*;
-import mindustry.world.meta.Attribute;
-import mindustry.world.meta.Env;
-import newdimension.world.gen.NDPlanetGenerator;
+import arc.graphics.Color;
+import mindustry.content.Items;
+import mindustry.content.Planets;
+import mindustry.game.Team;
+import mindustry.graphics.g3d.HexMesh;
+import mindustry.graphics.g3d.HexSkyMesh;
+import mindustry.graphics.g3d.MultiMesh;
+import mindustry.graphics.g3d.SunMesh;
+import mindustry.type.Planet;
+import ultimatedimension.world.gen.UDPlanetGenerator;
 
-public class NDPlanets implements ContentList{
+public class UDPlanets implements ContentList{
 
 	public static Planet NDsun,
-	ND;
+	UD;
 
 	public void load(){
 		/*NDsun = new Planet("NDsun", null, 5f){{
@@ -28,10 +29,10 @@ public class NDPlanets implements ContentList{
 				Color.valueOf("ffe371"),
 				Color.valueOf("f4ee8e")
 			);
-		}};
+		}};*/
 
-		ND = new Planet("ND", Planets.sun, 1f, 3){{
-			generator = new NDPlanetGenerator();
+		UD = new Planet("UD", Planets.sun, 1f, 3){{
+			generator = new UDPlanetGenerator();
 			meshLoader = () -> new HexMesh(this, 5);
 			cloudMeshLoader = () -> new MultiMesh(
 				new HexSkyMesh(this, 2, 0.15f, 0.14f, 5, Color.valueOf("eba768").a(0.75f), 2, 0.42f, 1f, 0.43f),
@@ -58,11 +59,11 @@ public class NDPlanets implements ContentList{
 			atmosphereRadOut = 0.3f;
 			startSector = 15;
 			alwaysUnlocked = true;
-			defaultCore = NDCoreBlocks.hanCore;
-			hiddenItems.addAll(Items.serpuloItems).removeAll(NDItems.ndItems);
-			hiddenItems.addAll(Items.erekirItems).removeAll(NDItems.ndItems);
+			defaultCore = UDCoreBlocks.hanCore;
+			hiddenItems.addAll(Items.serpuloItems).removeAll(UDItems.udItems);
+			hiddenItems.addAll(Items.erekirItems).removeAll(UDItems.udItems);
 
-			unlockedOnLand.add(NDCoreBlocks.hanCore);
+			unlockedOnLand.add(UDCoreBlocks.hanCore);
 		}};
 	}
-}*/
+}

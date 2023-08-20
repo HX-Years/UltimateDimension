@@ -2,21 +2,22 @@ package ultimatedimension.content;
 
 import mindustry.content.Items;
 import mindustry.content.Liquids;
+
 import static mindustry.content.Blocks.*;
 import static mindustry.content.TechTree.*;
+import static ultimatedimension.content.UDCoreBlocks.*;
+import static ultimatedimension.content.UDSectorPresets.*;
 import static ultimatedimension.content.UDCrafterBlocks.*;
 import static ultimatedimension.content.UDDefenseBlocks.*;
 import static ultimatedimension.content.UDPowerBlocks.*;
 import static ultimatedimension.content.UDTurrets.*;
-//import static newdimension.content.NDCoreBlocks.*;
-//import static newdimension.content.NDSectorPresets.*;
 
 public class UDTechTree implements ContentList{
 	@Override
 	public void load(){
 		{
-			//NDPlanets.ND.techTree = nodeRoot("ND", hanCore, () -> {
-			    node(surgeWallLarge, () -> {
+			UDPlanets.UD.techTree = nodeRoot("UD", hanCore, () -> {
+			    //node(surgeWallLarge, () -> {
 				    node(tungstenWall, () -> {
 				    	node(tungstenWallLarge, () -> {
 				    		node(nanoAlloyWall, () -> {
@@ -24,7 +25,7 @@ public class UDTechTree implements ContentList{
 				    		});
 				    	});
 			    	});
-		    	});
+		    	//});
 
 				nodeProduce(Items.copper, () -> {
 					nodeProduce(Items.lead, () -> {
@@ -82,8 +83,8 @@ public class UDTechTree implements ContentList{
 					node(frost, () -> {});
 				});
 				
-				//node(landingArea, () -> {});
-			//});
+				node(landingArea, () -> {});
+			});
 		}
 	}
 }

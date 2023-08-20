@@ -1,8 +1,9 @@
 package ultimatedimension.content;
 
-import arc.graphics.*;
-import arc.struct.*;
-import mindustry.type.*;
+import arc.graphics.Color;
+import arc.struct.Seq;
+import mindustry.type.Item;
+import mindustry.content.Items;
 
 public class UDItems implements ContentList{
 
@@ -30,7 +31,7 @@ public class UDItems implements ContentList{
 	"cost"用作建筑材料是消耗时间倍率 时间公式：各个材料需求数量乘此倍率后相加再除以60就是所需时间
 	*/
 
-	public static final Seq<Item> ndItems = new Seq<>(), ndOnlyItems = new Seq<>();
+	public static final Seq<Item> udItems = new Seq<>(), udOnlyItems = new Seq<>();
 
 	@Override
 	public void load(){
@@ -93,16 +94,16 @@ public class UDItems implements ContentList{
 		setCube = new Item("set_cube", Color.valueOf("F65827")){{
 		}};
 
-		/*ndItems.addAll(
+		udItems.addAll(
 			Items.copper, Items.lead, Items.graphite, Items.coal, Items.titanium, Items.thorium, Items.silicon,
 			Items.sand, Items.metaglass,
 			iron, radioactiveSubstances, hypernuclearCondensates,
 			steel, iterativeModule, electricCube, aluminium, refactoringModule,
 			nanoAlloy, dataCube, superComputingCube, modelCube, structureCube,
 			setCube
-		);*/
+		);
 
-		//ndOnlyItems.addAll(ndItems).removeAll(Items.serpuloItems);
-		//ndOnlyItems.addAll(ndItems).removeAll(Items.erekirItems);
+		udOnlyItems.addAll(udItems).removeAll(Items.serpuloItems);
+		udOnlyItems.addAll(udItems).removeAll(Items.erekirItems);
 	}
 }
