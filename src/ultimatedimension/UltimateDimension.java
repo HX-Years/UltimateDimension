@@ -5,15 +5,15 @@ import mindustry.mod.Mod;
 import ultimatedimension.content.*;
 import universecore.annotations.Annotations;
 
-@Annotations.ImportUNC(requireVersion = "1.8.4")
+@Annotations.ImportUNC(requireVersion = "1.8.5")
 public class UltimateDimension extends Mod{
 	public static final String ModName = "ultimate-dimension";
 	public static final ContentList[] modContents = new ContentList[]{
 		new UDItems(),
 		new UDLiquids(),
-		//new NDPlanets(),
-		//new NDSectorPresets(),
-		//new NDCoreBlocks(),
+		new NDPlanets(),
+		new NDSectorPresets(),
+		new NDCoreBlocks(),
 		new UDTurrets(),
 		new UDDefenseBlocks(),
 		new UDCrafterBlocks(),
