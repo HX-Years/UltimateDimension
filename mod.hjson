@@ -3,7 +3,7 @@ name: "Ultimate-dimension"
 author: "HX-Year"
 main: "ultimatedimension.UltimateDimension"
 description: "A Java mod."
-version: 1.0
+version: 0.1
 minGameVersion: 145
 hideBrowser: true
 java: true

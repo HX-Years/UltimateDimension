@@ -1,4 +1,4 @@
-/*package ultimatedimension.content;
+package ultimatedimension.content;
 
 import mindustry.content.*;
 import mindustry.type.*;
@@ -7,7 +7,9 @@ import mindustry.world.blocks.storage.*;
 
 public class UDCoreBlocks implements ContentList{
 
-	public static Block hanCore;
+	public static Block hanCore,//函
+	moCore,//模
+	daoCore;//道
 
 	@Override
 	public void load() {
@@ -25,4 +27,4 @@ public class UDCoreBlocks implements ContentList{
 			unitCapModifier = 12;
 		}};
 	}
-}*/
+}

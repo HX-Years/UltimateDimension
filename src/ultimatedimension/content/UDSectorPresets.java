@@ -1,4 +1,4 @@
-/*package ultimatedimension.content;
+package ultimatedimension.content;
 
 import mindustry.type.SectorPreset;
 
@@ -9,10 +9,10 @@ public class UDSectorPresets implements ContentList{
 
 	@Override
 	public void load(){
-		landingArea = new SectorPreset("landingArea", UD, 15){{
+		landingArea = new SectorPreset("landingArea", vastness, 15){{
 			alwaysUnlocked = true;
 			difficulty = 1;
 			addStartingItems = true;
 		}};
 	}
-}*/
+}

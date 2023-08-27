@@ -11,9 +11,9 @@ public class UltimateDimension extends Mod{
 	public static final ContentList[] modContents = new ContentList[]{
 		new UDItems(),
 		new UDLiquids(),
-		//new UDPlanets(),
-		//new UDSectorPresets(),
-		//new UDCoreBlocks(),
+		new UDPlanets(),
+		new UDSectorPresets(),
+		new UDCoreBlocks(),
 		new UDTurrets(),
 		new UDDefenseBlocks(),
 		new UDCrafterBlocks(),
