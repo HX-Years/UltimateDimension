@@ -5,4 +5,3 @@
 暂无
 # 个人的话
 慢慢来吧
-> 本mod需要一个前置mod：[Universe Core](https://github.com/EB-wilson/UniverseCore)，

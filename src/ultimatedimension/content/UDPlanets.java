@@ -1,4 +1,4 @@
-package ultimatedimension.content;
+/*package ultimatedimension.content;
 
 import arc.graphics.Color;
 import mindustry.content.Items;
@@ -31,7 +31,7 @@ public class UDPlanets implements ContentList{
 			);
 		}};*/
 
-		UD = new Planet("UD", Planets.sun, 1f, 3){{
+		/*UD = new Planet("UD", Planets.sun, 1f, 3){{
 			generator = new UDPlanetGenerator();
 			meshLoader = () -> new HexMesh(this, 5);
 			cloudMeshLoader = () -> new MultiMesh(
@@ -66,4 +66,4 @@ public class UDPlanets implements ContentList{
 			unlockedOnLand.add(UDCoreBlocks.hanCore);
 		}};
 	}
-}
+}*/

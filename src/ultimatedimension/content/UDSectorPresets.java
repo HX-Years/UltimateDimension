@@ -1,4 +1,4 @@
-package ultimatedimension.content;
+/*package ultimatedimension.content;
 
 import mindustry.type.SectorPreset;
 
@@ -15,4 +15,4 @@ public class UDSectorPresets implements ContentList{
 			addStartingItems = true;
 		}};
 	}
-}
+}*/

@@ -1,4 +1,4 @@
-package ultimatedimension.content;
+/*package ultimatedimension.content;
 
 import mindustry.content.*;
 import mindustry.type.*;
@@ -25,4 +25,4 @@ public class UDCoreBlocks implements ContentList{
 			unitCapModifier = 12;
 		}};
 	}
-}
+}*/

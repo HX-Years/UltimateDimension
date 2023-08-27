@@ -6,5 +6,4 @@ description: "A Java mod."
 version: 1.0
 minGameVersion: 145
 hideBrowser: true
-dependencies: ["universe-core"]
 java: true
