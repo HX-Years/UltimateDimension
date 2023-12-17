@@ -34,7 +34,7 @@ public class UDTechTree implements ContentList{
 							nodeProduce(UDItems.steel, () -> {
 								nodeProduce(UDItems.tungstenSteel, () -> {
 									nodeProduce(UDItems.radioactiveSubstances, () -> {
-										nodeProduce(UDItems.hypernuclearCondensates, () -> {});
+										//nodeProduce(UDItems.hypernuclearCondensates, () -> {});
 									});
 									nodeProduce(UDItems.electricCube, () -> {
 										nodeProduce(UDItems.refactoringModule, () -> {});

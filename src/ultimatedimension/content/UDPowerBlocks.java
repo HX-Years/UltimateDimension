@@ -87,7 +87,7 @@ public class UDPowerBlocks implements ContentList{
 			size = 2;
 			maxNodes = 8;
 			laserRange = 12f;
-			components.add(sharingPowerHealth);
+			//components.add(sharingPowerHealth);
 		}};
 	}
 }

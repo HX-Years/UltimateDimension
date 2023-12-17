@@ -30,14 +30,14 @@ public class UDDefenseBlocks implements ContentList{
 			requirements(Category.defense, ItemStack.with(UDItems.nanoAlloy, 10));
 			health = 1200;
 			size = 1;
-			components.add(selfHealing);
+			//components.add(selfHealing);
 		}};
 
 		nanoAlloyWallLarge = new ultimatedimension.world.blocks.defense.UDWall("nano_alloy_wall_large"){{
 			requirements(Category.defense, ItemStack.with(UDItems.nanoAlloy, 40));
 			health = 1200*4;
 			size = 2;
-			components.add(selfHealing);
+			//components.add(selfHealing);
 		}};
 	}
 }

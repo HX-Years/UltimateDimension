@@ -9,7 +9,6 @@ public class UDItems implements ContentList{
 
 	public static Item iron,//铁
 	radioactiveSubstances,//放射物
-	hypernuclearCondensates,//超核凝聚物
 	steel,//钢
 	iterativeModule,//迭代模块
 	electricCube,//电立方
@@ -17,11 +16,11 @@ public class UDItems implements ContentList{
 	aluminium,//铝
 	refactoringModule,//重构模块
 	nanoAlloy,//纳米合金
-	dataCube,//数据立方
-	superComputingCube,//超算立方
-	modelCube,//模型立方
-	structureCube,//结构立方
-	setCube;//集合立方
+	dataMatrix,//数据矩阵
+	superComputingMatrix,//超算矩阵
+	modelMatrix,//模型矩阵
+	structureMatrix,//结构矩阵
+	setMatrix;//集合矩阵
 
 	/*"explosiveness"爆炸性
 	"flammability"燃烧性，在燃烧发电机中这个与发电量成正比例
@@ -42,11 +41,6 @@ public class UDItems implements ContentList{
 
 		radioactiveSubstances = new Item("radioactive_substances", Color.valueOf("999C77")){{
 			radioactivity = 1f;
-		}};
-
-		hypernuclearCondensates = new Item("hyper_nuclear_condensates", Color.valueOf("E88774")){{
-			explosiveness = 2f;
-			radioactivity = 5f;
 		}};
 
 		steel = new Item("steel", Color.valueOf("E84649")){{
@@ -79,28 +73,28 @@ public class UDItems implements ContentList{
 			cost = 1.2f;
 		}};
 
-		dataCube = new Item("data_cube", Color.valueOf("F65827")){{
+		dataMatrix = new Item("data_matrix", Color.valueOf("F65827")){{
 		}};
 
-		superComputingCube = new Item("supercomputing_cube", Color.valueOf("F65827")){{
+		superComputingMatrix = new Item("supercomputing_matrix", Color.valueOf("F65827")){{
 		}};
 
-		modelCube = new Item("model_cube", Color.valueOf("F65827")){{
+		modelMatrix = new Item("model_matrix", Color.valueOf("F65827")){{
 		}};
 
-		structureCube = new Item("structure_cube", Color.valueOf("F65827")){{
+		structureMatrix = new Item("structure_matrix", Color.valueOf("F65827")){{
 		}};
 
-		setCube = new Item("set_cube", Color.valueOf("F65827")){{
+		setMatrix = new Item("set_matrix", Color.valueOf("F65827")){{
 		}};
 
 		udItems.addAll(
 			Items.copper, Items.lead, Items.graphite, Items.coal, Items.titanium, Items.thorium, Items.silicon,
 			Items.sand, Items.metaglass,
-			iron, radioactiveSubstances, hypernuclearCondensates,
+			iron, radioactiveSubstances,
 			steel, iterativeModule, electricCube, aluminium, refactoringModule,
-			nanoAlloy, dataCube, superComputingCube, modelCube, structureCube,
-			setCube
+			nanoAlloy, dataMatrix, superComputingMatrix, modelMatrix, structureMatrix,
+			setMatrix
 		);
 
 		udOnlyItems.addAll(udItems).removeAll(Items.serpuloItems);

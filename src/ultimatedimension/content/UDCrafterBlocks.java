@@ -65,7 +65,7 @@ public class UDCrafterBlocks implements ContentList{
 				new ItemStack(Items.thorium, 2)
 			);
 			consumePower(45f);
-			outputItem = new ItemStack(UDItems.hypernuclearCondensates, 2);
+			outputItem = new ItemStack(UDItems.nanoAlloy, 2);
 		}};
 
 		tungstenSteelSmelter = new GenericCrafter("tungsten_steel_smelter"){{
@@ -98,56 +98,6 @@ public class UDCrafterBlocks implements ContentList{
 			size = 3;
 			health = 1200;
 
-			/*newConsume();
-			consume.time(90f);
-			consume.power(2.2f);
-			consume.liquid(Liquids.water, 1f);
-			newProduce();
-			produce.item(NDItems.data_cube);
-
-			newConsume();
-			consume.time(90f);
-			consume.power(3.6f);
-			consume.item(NDItems.data_cube, 1);
-			consume.liquid(Liquids.water, 1f);
-			newProduce();
-			produce.item(NDItems.supercomputing_cube);
-
-			newConsume();
-			consume.time(120f);
-			consume.power(5.7f);
-			consume.items(ItemStack.with(
-				NDItems.data_cube, 1,
-				NDItems.supercomputing_cube, 1
-			));
-			consume.liquid(Liquids.water, 1f);
-			newProduce();
-			produce.item(NDItems.model_cube);
-
-			newConsume();
-			consume.time(120f);
-			consume.power(8f);
-			consume.items(ItemStack.with(
-				NDItems.data_cube, 1,
-				NDItems.super_computing, 1,
-				NDItems.model_cube, 1
-			));
-			consume.liquid(Liquids.water, 1f);
-			newProduce();
-			produce.item(NDItems.structure_cube);
-
-			newConsume();
-			consume.time(150f);
-			consume.power(10f);
-			consume.items(ItemStack.with(
-				NDItems.data_cube, 1,
-				NDItems.supercomputing, 1,
-				NDItems.model_cube, 1,
-				NDItems.structure, 1
-			));
-			consume.liquid(Liquids.water, 3f);
-			newProduce();
-			produce.item(NDItems.set_cube);*/
 		}};
 	}
 }
