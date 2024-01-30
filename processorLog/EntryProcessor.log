@@ -1,5 +1,5 @@
 processor: EntryProcessor (full class name: universecore.annotations.EntryProcessor)
-time: Sun Dec 10 05:58:29 UTC 2023
+time: Wed Jan 24 18:40:31 CST 2024
 
 -----------------------------------------
 annotation: universecore.annotations.Annotations.ImplEntries
@@ -18,27 +18,22 @@ annotation: universecore.annotations.Annotations.ImplEntries
 10|         update = true;
 11|     }
 12|     
-13|     @Override
-14|     public BaseConsumers newConsume() {
-15|         return ConsumerBlockComp.super.newConsume();
-16|     }
-17|     
-18|     public arc.struct.Seq<universecore.world.consumers.BaseConsumers> optionalCons() {
-19|         return this.optionalCons;
-20|     }
-21|     
-22|     public boolean oneOfOptionCons() {
-23|         return this.oneOfOptionCons;
-24|     }
-25|     
-26|     public universecore.world.consumers.ConsFilter filter() {
-27|         return this.consFilter;
-28|     }
-29|     
-30|     public void init() {
-31|         super.init();
-32|         this.initPower();
-33|         this.initFilter();
-34|     }
-35| }
+13|     public arc.struct.Seq<universecore.world.consumers.BaseConsumers> optionalCons() {
+14|         return this.optionalCons;
+15|     }
+16|     
+17|     public boolean oneOfOptionCons() {
+18|         return this.oneOfOptionCons;
+19|     }
+20|     
+21|     public universecore.world.consumers.ConsFilter filter() {
+22|         return this.consFilter;
+23|     }
+24|     
+25|     public void init() {
+26|         super.init();
+27|         this.initPower();
+28|         this.initFilter();
+29|     }
+30| }
 

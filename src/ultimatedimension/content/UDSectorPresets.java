@@ -10,9 +10,9 @@ public class UDSectorPresets implements ContentList{
 	@Override
 	public void load(){
 		landingArea = new SectorPreset("landingArea", vastness, 15){{
-			alwaysUnlocked = true;
+			/*alwaysUnlocked = true;
 			difficulty = 1;
-			addStartingItems = true;
+			addStartingItems = true;*/
 		}};
 	}
 }

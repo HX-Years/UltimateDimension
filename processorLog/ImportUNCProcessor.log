@@ -1,5 +1,5 @@
 processor: ImportUNCProcessor (full class name: universecore.annotations.ImportUNCProcessor)
-time: Sun Dec 10 05:58:29 UTC 2023
+time: Wed Jan 24 18:40:31 CST 2024
 
 -----------------------------------------
 annotation: universecore.annotations.Annotations.ImportUNC
@@ -298,7 +298,7 @@ annotation: universecore.annotations.Annotations.ImportUNC
 290|         if ($status$ == 0) {
 291|             universecore.UncCore.signup(ultimatedimension.UltimateDimension.class);
 292|             ModName = "ultimate-dimension";
-293|             modContents = new ContentList[]{new UDItems(), new UDLiquids(), new UDPlanets(), new UDSectorPresets(), new UDCoreBlocks(), new UDTurrets(), new UDDefenseBlocks(), new UDCrafterBlocks(), new UDPowerBlocks(), new UDOreBlocks(), new UDTechTree()};
+293|             modContents = new ContentList[]{new UDItems(), new UDLiquids(), new UDCoreBlocks(), new UDDefenseBlocks(), new UDCrafterBlocks(), new UDPowerBlocks(), new UDOreBlocks(), new UDTechTree()};
 294|         } else {
 295|             ModName = null;
 296|             modContents = null;

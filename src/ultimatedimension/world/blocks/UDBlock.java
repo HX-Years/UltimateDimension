@@ -12,9 +12,4 @@ public class UDBlock extends Block implements ConsumerBlockComp {
         super(name);
         update = true;
     }
-
-    @Override
-    public BaseConsumers newConsume() {
-        return ConsumerBlockComp.super.newConsume();
-    }
 }

@@ -97,7 +97,6 @@ public class UDCrafterBlocks implements ContentList{
 			hasLiquids = true;
 			size = 3;
 			health = 1200;
-
 		}};
 	}
 }

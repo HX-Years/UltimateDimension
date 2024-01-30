@@ -75,19 +75,5 @@ public class UDPowerBlocks implements ContentList{
 			maxNodes = 15;
 			laserRange = 15f;
 		}};
-
-		healNode = new ultimatedimension.world.blocks.power.UDPowerNode("heal_node"){{
-			requirements(Category.power, ItemStack.with(
-				Items.silicon, 6,
-				UDItems.nanoAlloy, 12,
-				UDItems.steel, 8
-			));
-			consumesPower = true;
-			consumePower(1.5f);
-			size = 2;
-			maxNodes = 8;
-			laserRange = 12f;
-			//components.add(sharingPowerHealth);
-		}};
 	}
 }

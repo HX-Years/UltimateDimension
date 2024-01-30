@@ -4,20 +4,20 @@ import mindustry.content.Items;
 import mindustry.content.Liquids;
 
 import static mindustry.content.Blocks.*;
-import static mindustry.content.TechTree.*;
-import static ultimatedimension.content.UDCoreBlocks.*;
-import static ultimatedimension.content.UDSectorPresets.*;
+import static mindustry.content.TechTree.node;
+import static mindustry.content.TechTree.nodeProduce;
 import static ultimatedimension.content.UDCrafterBlocks.*;
 import static ultimatedimension.content.UDDefenseBlocks.*;
+import static ultimatedimension.content.UDItems.*;
+import static ultimatedimension.content.UDLiquids.*;
 import static ultimatedimension.content.UDPowerBlocks.*;
-import static ultimatedimension.content.UDTurrets.*;
 
 public class UDTechTree implements ContentList{
 	@Override
 	public void load(){
 		{
-			UDPlanets.vastness.techTree = nodeRoot("vastness", hanCore, () -> {
-			    //node(surgeWallLarge, () -> {
+			//UDPlanets.vastness.techTree = nodeRoot("vastness", hanCore, () -> {
+			    node(surgeWallLarge, () -> {
 				    node(tungstenWall, () -> {
 				    	node(tungstenWallLarge, () -> {
 				    		node(nanoAlloyWall, () -> {
@@ -25,21 +25,19 @@ public class UDTechTree implements ContentList{
 				    		});
 				    	});
 			    	});
-		    	//});
+		    	});
 
 				nodeProduce(Items.copper, () -> {
 					nodeProduce(Items.lead, () -> {
-						nodeProduce(UDItems.iron, () -> {
-							nodeProduce(UDItems.aluminium, () -> {});
-							nodeProduce(UDItems.steel, () -> {
-								nodeProduce(UDItems.tungstenSteel, () -> {
-									nodeProduce(UDItems.radioactiveSubstances, () -> {
-										//nodeProduce(UDItems.hypernuclearCondensates, () -> {});
+						nodeProduce(iron, () -> {
+							nodeProduce(aluminium, () -> {});
+							nodeProduce(steel, () -> {
+								nodeProduce(tungstenSteel, () -> {
+									nodeProduce(radioactiveSubstances, () -> {});
+									nodeProduce(electricCube, () -> {
+										nodeProduce(refactoringModule, () -> {});
 									});
-									nodeProduce(UDItems.electricCube, () -> {
-										nodeProduce(UDItems.refactoringModule, () -> {});
-									});
-									nodeProduce(UDItems.iterativeModule, () -> {});
+									nodeProduce(iterativeModule, () -> {});
 								});
 							});
 						});
@@ -57,9 +55,9 @@ public class UDTechTree implements ContentList{
 				});
 
 				nodeProduce(Liquids.water, () -> {
-					nodeProduce(UDLiquids.lava, () -> {
-						nodeProduce(UDLiquids.nuclearWasteWater, () -> {
-							nodeProduce(UDLiquids.superFrozenLiquid, () -> {});
+					nodeProduce(lava, () -> {
+						nodeProduce(nuclearWasteWater, () -> {
+							nodeProduce(superFrozenLiquid, () -> {});
 						});
 					});
 				});
@@ -78,13 +76,13 @@ public class UDTechTree implements ContentList{
 					});
 				});
 
-				node(huiCan, () -> {
+				/*node(huiCan, () -> {
 					node(superconductingElectromagneticGun, () -> {});
 					node(frost, () -> {});
-				});
+				});*/
 				
-				node(landingArea, () -> {});
-			});
+				//node(landingArea, () -> {});
+			//});
 		}
 	}
 }
