@@ -13,7 +13,10 @@ public class UDCrafterBlocks implements ContentList{
 	superNuclearMachine,//超核机
 	tungstenSteelSmelter,//钨钢冶炼厂
 	nanoAlloyFactory,//纳米合金制造厂
-	researchCenter;//研究中心
+	researchCenter,//研究中心
+	dataMatrixResearchCenter,//数据矩阵研究中心
+	superComputingMatrixResearchCenter;//超算矩阵研究中心
+
 
 	@Override
 	public void load(){
@@ -95,6 +98,19 @@ public class UDCrafterBlocks implements ContentList{
 			hasItems = true;
 			hasPower = true;
 			hasLiquids = true;
+			size = 3;
+			health = 1200;
+		}};
+
+		dataMatrixResearchCenter = new GenericCrafter("data_matrix_research_center"){{
+			requirements(Category.crafting, ItemStack.with(
+					Items.silicon, 300,
+					UDItems.steel, 400
+			));
+			hasItems = true;
+			hasPower = true;
+			hasLiquids = true;
+			consumePower(20f);
 			size = 3;
 			health = 1200;
 		}};
