@@ -3,9 +3,7 @@ package ultimatedimension;
 import arc.util.Log;
 import mindustry.mod.Mod;
 import ultimatedimension.content.*;
-import universecore.annotations.Annotations;
 
-@Annotations.ImportUNC(requireVersion = "1.8.9")
 public class UltimateDimension extends Mod{
 	public static final String ModName = "ultimate-dimension";
 	public static final ContentList[] modContents = new ContentList[]{
