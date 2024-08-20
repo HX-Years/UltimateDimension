@@ -41,6 +41,7 @@ public class UDItems implements ContentList{
 
 		radioactiveSubstances = new Item("radioactive_substances", Color.valueOf("999C77")){{
 			radioactivity = 1f;
+			buildable = false;
 		}};
 
 		steel = new Item("steel", Color.valueOf("E84649")){{
@@ -53,6 +54,7 @@ public class UDItems implements ContentList{
 
 		electricCube = new Item("electric_cube", Color.valueOf("E75665")){{
 			charge = 1f;
+			buildable = false;
 		}};
 
 		tungstenSteel = new Item("tungsten_steel", Color.valueOf("666A72")){{
@@ -74,18 +76,28 @@ public class UDItems implements ContentList{
 		}};
 
 		dataMatrix = new Item("data_matrix", Color.valueOf("F65827")){{
+			charge = 0.2f;
+			buildable = false;
 		}};
 
 		superComputingMatrix = new Item("supercomputing_matrix", Color.valueOf("F65827")){{
+			charge = 0.2f;
+			buildable = false;
 		}};
 
 		modelMatrix = new Item("model_matrix", Color.valueOf("F65827")){{
+			charge = 0.2f;
+			buildable = false;
 		}};
 
 		structureMatrix = new Item("structure_matrix", Color.valueOf("F65827")){{
+			charge = 0.2f;
+			buildable = false;
 		}};
 
 		setMatrix = new Item("set_matrix", Color.valueOf("F65827")){{
+			charge = 0.2f;
+			buildable = false;
 		}};
 
 		udItems.addAll(

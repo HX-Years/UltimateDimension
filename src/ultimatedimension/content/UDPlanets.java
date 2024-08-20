@@ -26,7 +26,7 @@ public class UDPlanets implements ContentList{
 	public void load(){
 
 		vastness = new Planet("vastness", Planets.sun, 1f, 3){{
-            /*generator = new SerpuloPlanetGenerator();
+            generator = new SerpuloPlanetGenerator();
             meshLoader = () -> new HexMesh(this, 6);
             cloudMeshLoader = () -> new MultiMesh(
                 new HexSkyMesh(this, 11, 0.15f, 0.13f, 5, new Color().set(Pal.spore).mul(0.9f).a(0.75f), 2, 0.45f, 0.9f, 0.38f),
@@ -56,7 +56,7 @@ public class UDPlanets implements ContentList{
             landCloudColor = Pal.spore.cpy().a(0.5f);
             hiddenItems.addAll(Items.erekirItems).removeAll(UDItems.udItems);
             hiddenItems.addAll(Items.serpuloItems).removeAll(UDItems.udItems);
-            unlockedOnLand.add(UDCoreBlocks.hanCore);*/
+            unlockedOnLand.add(UDCoreBlocks.hanCore);
         }};
 	}
 }
