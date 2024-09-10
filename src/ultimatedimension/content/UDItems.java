@@ -44,7 +44,7 @@ public class UDItems implements ContentList{
 			buildable = false;
 		}};
 
-		steel = new Item("steel", Color.valueOf("E84649")){{
+		steel = new Item("steel", Color.valueOf("878C97")){{
 			cost = 1.45f;
 		}};
 
@@ -57,7 +57,7 @@ public class UDItems implements ContentList{
 			buildable = false;
 		}};
 
-		tungstenSteel = new Item("tungsten_steel", Color.valueOf("666A72")){{
+		tungstenSteel = new Item("tungsten_steel", Color.valueOf("7B7B7B")){{
 			charge = 0.2f;
 			cost = 1.2f;
 		}};

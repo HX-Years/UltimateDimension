@@ -18,12 +18,13 @@ public class UDTechTree implements ContentList{
 	public void load(){
 
 		UDPlanets.vastness.techTree = nodeRoot("vastness", hanCore, () -> {
-			node(surgeWallLarge, () -> {
-				node(tungstenSteelWall, () -> {
-					node(tungstenSteelWallLarge, () -> {
-						node(nanoAlloyWall, () -> {
-							node(nanoAlloyWallLarge, () -> {});
-						});
+           UDPlanets.mo.techTree = nodeRoot("mo", hanCore, () -> {
+                node(tungstenSteelWallLarge, () -> {});
+            });
+			node(tungstenSteelWall, () -> {
+				node(tungstenSteelWallLarge, () -> {
+					node(nanoAlloyWall, () -> {
+						node(nanoAlloyWallLarge, () -> {});
 					});
 				});
 			});

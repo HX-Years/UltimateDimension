@@ -23,24 +23,24 @@ public class UDLiquids implements ContentList{
 	public void load(){
 		nuclearWasteWater = new CellLiquid("nuclear_waste_water", Color.valueOf("8ECC47")){{
 			heatCapacity = 0.4f;
+			boilPoint = 0.5f;
 			viscosity = 0.5f;
-			moveThroughBlocks = true;
 			spreadTarget = Liquids.water;
-			capPuddles = false;
+			effect = StatusEffects.wet;
 		}};
 
-		lava = new Liquid("lava", Color.valueOf("E88665")){{
-			temperature = 0.2f;
-			viscosity = 1f;
+		lava = new Liquid("lava", Color.valueOf("FC7600")){{
+			temperature = 1f;
+			viscosity = 0.85f;
 			coolant = false;
 			incinerable = false;
-			//effect = StatusEffects.;
+			effect = StatusEffects.melting;
 		}};
 
-		superFrozenLiquid = new Liquid("super_fronze_liquid", Color.valueOf("365D99")){{
+		superFrozenLiquid = new Liquid("super_fronze_liquid", Color.valueOf("6CAFFF")){{
 			temperature = 0.02f;
 			heatCapacity = 1.6f;
-			viscosity = 0.5f;
+			viscosity = 0.52f;
 			effect = StatusEffects.freezing;
 		}};
 	}

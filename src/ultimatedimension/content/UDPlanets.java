@@ -18,8 +18,8 @@ import mindustry.content.*;
 
 public class UDPlanets implements ContentList{
 
-	public static Planet vastness;//浩瀚->函
-	//->模
+	public static Planet vastness,//浩瀚->函
+	mo;//->模
 	//->道
 
 	@Override
@@ -57,6 +57,10 @@ public class UDPlanets implements ContentList{
             hiddenItems.addAll(Items.erekirItems).removeAll(UDItems.udItems);
             hiddenItems.addAll(Items.serpuloItems).removeAll(UDItems.udItems);
             unlockedOnLand.add(UDCoreBlocks.hanCore);
+        }};
+
+        mo = new Planet("mo", Planets.sun, 12f, 4) {{
+
         }};
 	}
 }
