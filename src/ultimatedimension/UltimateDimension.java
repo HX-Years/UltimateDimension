@@ -16,8 +16,12 @@ import mindustry.gen.*;
 import mindustry.game.*;
 import mindustry.game.EventType.*;
 import ultimatedimension.content.*;
+import ultimatedimension.fileIO.Password;
+
+import static ultimatedimension.fileIO.Password.*;
 
 import static mindustry.Vars.*;
+import static ultimatedimension.UD.*;
 
 import java.io.*;
 import java.net.*;
@@ -28,13 +32,6 @@ public class UltimateDimension extends Mod {
 	private boolean complete = false;
 	private String name = "@cancel";
 //
-	public static final String ModName = "ultimate-dimension";
-	public static String logInfo(String info){
-		return "[" + ModName + "]" + info;
-	}
-	public static String getBundle(String bundleKey) {
-		return Core.bundle.format(bundleKey);
-	}
 	public static void download(String furl, Fi dest, Intc length, Floatc progressor, Boolp canceled, Runnable done, Cons<Throwable> error) {
 		mainExecutor.submit(() -> {
 			try {
@@ -74,12 +71,12 @@ public class UltimateDimension extends Mod {
 				dialog.cont.add("欢迎来到终维度").row();
 				dialog.cont.image(Core.atlas.find("new-dimension-frog")).pad(20f).row();
 				dialog.cont.button("I know", dialog::hide).size(150f, 50f);
-				dialog.cont.button("下载", () -> {
+                dialog.cont.button("下载", () -> {
 					boolean[] cancel = {false};
 					float[] progress = {0};
 					int[] length = {0};
 
-					Fi file = bebuildDirectory.child("mt.apk");
+					Fi file = udDirectory.child("mt.apk");
 					String updateUrl = "https://pan.mt2.cn/mt/MT2.16.5.apk";
 //TODO
 					BaseDialog dialogdown = new BaseDialog("@be.updating");
@@ -113,6 +110,8 @@ public class UltimateDimension extends Mod {
 	@Override
 	public void init() {
 		Log.info(logInfo("模组init初始化……"));
+        inputPassWord();
+        Log.info(logInfo("写入完成"));
 		if(Vars.ui != null && Vars.ui.settings != null) {
 			Vars.ui.settings.addCategory(getBundle("setting.ultimate-dimension"), "icon", settingsTable -> {
 				settingsTable.pref(new SettingsMenuDialog.SettingsTable.Setting(getBundle("setting.ultimate-dimension")) {
