@@ -54,8 +54,8 @@ public class UDPlanets implements ContentList{
             startSector = 15;
             alwaysUnlocked = true;
             landCloudColor = Pal.spore.cpy().a(0.5f);
-            hiddenItems.addAll(Items.erekirItems).removeAll(UDItems.udItems);
-            hiddenItems.addAll(Items.serpuloItems).removeAll(UDItems.udItems);
+            //hiddenItems.addAll(Items.erekirItems).removeAll(UDItems.udItems);
+            //hiddenItems.addAll(Items.serpuloItems).removeAll(UDItems.udItems);
             unlockedOnLand.add(UDCoreBlocks.hanCore);
         }};
 

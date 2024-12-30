@@ -4,6 +4,7 @@ import mindustry.content.*;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.storage.*;
+import ultimatedimension.world.blocks.storage.ACoreBlock;
 
 public class UDCoreBlocks implements ContentList{
 
@@ -13,7 +14,7 @@ public class UDCoreBlocks implements ContentList{
 
 	@Override
 	public void load() {
-		hanCore = new CoreBlock("han_core"){{
+		hanCore = new ACoreBlock("han_core"){{
 			requirements(Category.effect, ItemStack.with(
 				UDItems.steel, 1000,
 				UDItems.aluminium, 200
@@ -22,7 +23,7 @@ public class UDCoreBlocks implements ContentList{
 			isFirstTier = true;
 			unitType = UnitTypes.gamma;
 			health = 2000;
-			itemCapacity = 10000;
+			itemCapacity = 20000;
 			size = 3;
 			unitCapModifier = 12;
 		}};

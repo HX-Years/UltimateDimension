@@ -30,7 +30,7 @@ public class UDItems implements ContentList{
 	"cost"用作建筑材料是消耗时间倍率 时间公式：各个材料需求数量乘此倍率后相加再除以60就是所需时间
 	*/
 
-	public static final Seq<Item> udItems = new Seq<>(), udOnlyItems = new Seq<>();
+	//public static final Seq<Item> udItems = new Seq<>(), udOnlyItems = new Seq<>();
 
 	@Override
 	public void load(){
@@ -100,7 +100,7 @@ public class UDItems implements ContentList{
 			buildable = false;
 		}};
 
-		udItems.addAll(
+		/*udItems.addAll(
 			Items.copper, Items.lead, Items.graphite, Items.coal, Items.titanium, Items.thorium, Items.silicon,
 			Items.sand, Items.metaglass,
 			iron, radioactiveSubstances,
@@ -110,6 +110,6 @@ public class UDItems implements ContentList{
 		);
 
 		udOnlyItems.addAll(udItems).removeAll(Items.serpuloItems);
-		udOnlyItems.addAll(udItems).removeAll(Items.erekirItems);
+		udOnlyItems.addAll(udItems).removeAll(Items.erekirItems);*/
 	}
 }

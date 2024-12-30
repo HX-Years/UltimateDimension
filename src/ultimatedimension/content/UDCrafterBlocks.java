@@ -3,13 +3,17 @@ package ultimatedimension.content;
 import mindustry.content.Items;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
-import mindustry.world.Block;
-import mindustry.world.blocks.production.GenericCrafter;
+import mindustry.world.*;
+import mindustry.world.blocks.power.*;
+import mindustry.world.blocks.production.*;
+import ultimatedimension.world.blocks.UDBlock;
+import ultimatedimension.world.blocks.crafter.UDGenericCrafter;
 
 public class UDCrafterBlocks implements ContentList{
 
 	public static Block steelFactory,//钢厂
 	electricCubeBaler,//电立方打包机
+    electricCubeUnpackingMachine,//电立方解包机
 	superNuclearMachine,//超核机
 	tungstenSteelSmelter,//钨钢冶炼厂
 	nanoAlloyFactory,//纳米合金制造厂
@@ -40,16 +44,36 @@ public class UDCrafterBlocks implements ContentList{
 			requirements(Category.crafting, ItemStack.with(
 				Items.lead, 20,
 				Items.tungsten, 30,
-				UDItems.steel, 30));
-			size = 2;
-			health = 1000;
-			craftTime = 80f;
+				UDItems.steel, 30
+            ));
+			size = 3;
+			health = 2000;
+			craftTime = 60f;
+            buildCost = 210f;
 			hasItems = true;
 			hasPower = true;
 			itemCapacity = 20;
-			consumePower(30f);
-			outputItem = new ItemStack(UDItems.electricCube, 2);
+			consumePower(800f);
+			outputItem = new ItemStack(UDItems.electricCube, 1);
 		}};
+
+        electricCubeUnpackingMachine = new UDGenericCrafter("electric_cube_unpacking_machine"){{
+            requirements(Category.crafting, ItemStack.with(
+                Items.lead, 20,
+                Items.tungsten, 30,
+                UDItems.steel, 30
+            ));
+            size = 3;
+            health = 2000;
+            craftTime = 60f;
+            buildCost = 210f;
+            hasItems = true;
+            hasPower = true;
+            itemCapacity = 20;
+            consumePower(60f);
+            outputsPower = true;
+            //powerProduction = 800f;
+        }};
 
 		superNuclearMachine = new GenericCrafter("super_nuclear_machine"){{
 			requirements(Category.crafting, ItemStack.with(
