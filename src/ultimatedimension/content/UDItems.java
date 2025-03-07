@@ -5,13 +5,15 @@ import arc.struct.Seq;
 import mindustry.type.Item;
 import mindustry.content.Items;
 
+import ultimatedimension.type.UDItem;
+
 public class UDItems implements ContentList{
 
 	public static Item iron,//铁
 	radioactiveSubstances,//放射物
 	steel,//钢
 	iterativeModule,//迭代模块
-	electricCube,//电立方
+	/*electricCube,*///电立方
 	tungstenSteel,//钨钢
 	aluminium,//铝
 	refactoringModule,//重构模块
@@ -21,6 +23,8 @@ public class UDItems implements ContentList{
 	modelMatrix,//模型矩阵
 	structureMatrix,//结构矩阵
 	setMatrix;//集合矩阵
+	
+	public static UDItem electricCube;
 
 	/*"explosiveness"爆炸性
 	"flammability"燃烧性，在燃烧发电机中这个与发电量成正比例
@@ -52,9 +56,10 @@ public class UDItems implements ContentList{
 			cost = 1.5f;
 		}};
 
-		electricCube = new Item("electric_cube", Color.valueOf("E75665")){{
+		electricCube = new UDItem("electric_cube", Color.valueOf("E75665")){{
 			charge = 1f;
 			buildable = false;
+			udhaspower = 10000f;
 		}};
 
 		tungstenSteel = new Item("tungsten_steel", Color.valueOf("7B7B7B")){{
