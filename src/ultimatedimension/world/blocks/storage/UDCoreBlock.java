@@ -1,42 +1,16 @@
 package ultimatedimension.world.blocks.storage;
 
-import static mindustry.Vars.state;
-
-import arc.*;
-import arc.func.*;
-import arc.graphics.*;
-import arc.graphics.g2d.*;
-import arc.math.*;
-import arc.math.geom.*;
-import arc.scene.ui.layout.*;
-import arc.struct.*;
-import arc.util.*;
-import mindustry.*;
-import mindustry.content.*;
-import mindustry.core.*;
-import mindustry.ctype.*;
-import mindustry.entities.*;
-import mindustry.game.EventType.*;
-import mindustry.game.*;
-import mindustry.gen.*;
-import mindustry.graphics.*;
-import mindustry.logic.*;
-import mindustry.type.*;
-import mindustry.ui.*;
-import mindustry.world.*;
-import mindustry.world.meta.*;
-import mindustry.world.modules.*;
-
+import arc.Core;
 import mindustry.core.UI;
+import mindustry.ctype.UnlockableContent;
 import mindustry.game.Team;
+import mindustry.graphics.Pal;
 import mindustry.ui.Bar;
 import mindustry.world.Tile;
 import mindustry.world.blocks.storage.CoreBlock;
-import ultimatedimension.world.blocks.*;
-import ultimatedimension.world.blocks.storage.*;
-import static ultimatedimension.UD.*;
 
-import static mindustry.Vars.*;
+import static mindustry.Vars.content;
+import static mindustry.Vars.state;
 
 public class UDCoreBlock extends CoreBlock {
 

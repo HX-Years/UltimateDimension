@@ -1,9 +1,5 @@
 package ultimatedimension.fileIO;
 
-import java.util.*;
-import java.util.regex.*;
-import java.io.*;
-
 public class StoryPattern {
 
     public void reads() {

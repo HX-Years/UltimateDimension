@@ -1,15 +1,6 @@
 package ultimatedimension.content;
 
-import mindustry.content.Fx;
-import mindustry.content.Items;
-import mindustry.entities.bullet.BasicBulletType;
-import mindustry.entities.pattern.ShootAlternate;
-import mindustry.type.Category;
-import mindustry.type.ItemStack;
 import mindustry.world.Block;
-import mindustry.world.blocks.defense.turrets.ItemTurret;
-import mindustry.world.blocks.defense.turrets.LiquidTurret;
-import mindustry.world.blocks.defense.turrets.Turret;
 
 public class UDTurrets implements ContentList{
 	

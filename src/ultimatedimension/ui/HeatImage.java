@@ -1,13 +1,13 @@
 package ultimatedimension.ui;
 
-import arc.graphics.*;
-import arc.scene.ui.*;
-import arc.scene.ui.layout.*;
-import arc.util.*;
-
-import mindustry.core.*;
-import mindustry.gen.*;
-import mindustry.ui.*;
+import arc.graphics.Color;
+import arc.scene.ui.Image;
+import arc.scene.ui.layout.Stack;
+import arc.scene.ui.layout.Table;
+import arc.util.Scaling;
+import mindustry.core.UI;
+import mindustry.gen.Icon;
+import mindustry.ui.Styles;
 
 /** An ItemDisplay, but for heat. */
 public class HeatImage extends Table {

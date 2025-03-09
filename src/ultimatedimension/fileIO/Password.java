@@ -1,11 +1,11 @@
 package ultimatedimension.fileIO;
 
-import java.util.*;
-import arc.files.*;
-import arc.util.*;
-import arc.math.*;
+import arc.files.Fi;
+import arc.math.Rand;
+import arc.util.Log;
 
-import static ultimatedimension.UD.*;
+import static ultimatedimension.UD.logInfo;
+import static ultimatedimension.UD.udDirectory;
 
 public class Password {
 

@@ -1,13 +1,13 @@
 package ultimatedimension.ui;
 
-import arc.scene.ui.*;
-import arc.scene.ui.layout.*;
-import arc.util.*;
-
-import mindustry.core.*;
-import mindustry.gen.*;
-import mindustry.graphics.*;
-import mindustry.ui.*;
+import arc.scene.ui.Image;
+import arc.scene.ui.layout.Stack;
+import arc.scene.ui.layout.Table;
+import arc.util.Scaling;
+import mindustry.core.UI;
+import mindustry.gen.Icon;
+import mindustry.graphics.Pal;
+import mindustry.ui.Styles;
 
 /** An ItemDisplay, but for power. */
 public class PowerImage extends Table {

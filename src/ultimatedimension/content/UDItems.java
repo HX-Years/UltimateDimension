@@ -1,10 +1,7 @@
 package ultimatedimension.content;
 
 import arc.graphics.Color;
-import arc.struct.Seq;
 import mindustry.type.Item;
-import mindustry.content.Items;
-
 import ultimatedimension.type.UDItem;
 
 public class UDItems implements ContentList{

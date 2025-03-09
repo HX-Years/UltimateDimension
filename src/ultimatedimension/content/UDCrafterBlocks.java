@@ -1,22 +1,17 @@
 package ultimatedimension.content;
 
 import arc.struct.Seq;
-import arc.util.Log;
-import mindustry.content.*;
-import mindustry.graphics.Pal;
-import mindustry.mod.Mod;
-import mindustry.type.LiquidStack;
-
 import mindustry.content.Items;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
-import mindustry.world.*;
-import mindustry.world.blocks.power.*;
-import mindustry.world.blocks.production.*;
-import ultimatedimension.world.blocks.UDBlock;
-import ultimatedimension.world.blocks.crafter.*;
-import ultimatedimension.world.blocks.multi.*;
-import ultimatedimension.ui.*;
+import mindustry.world.Block;
+import mindustry.world.blocks.production.GenericCrafter;
+import ultimatedimension.world.blocks.crafter.MultiRecipeCrafter;
+import ultimatedimension.world.blocks.crafter.UDGenericCrafter;
+import ultimatedimension.world.blocks.multi.IOEntry;
+import ultimatedimension.world.blocks.multi.MultiCrafter;
+import ultimatedimension.world.blocks.multi.Recipe;
+import ultimatedimension.world.blocks.multi.RecipeSwitchStyle;
 
 public class UDCrafterBlocks implements ContentList {
 

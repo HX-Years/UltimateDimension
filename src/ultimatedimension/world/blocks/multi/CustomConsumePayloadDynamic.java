@@ -1,12 +1,15 @@
 package ultimatedimension.world.blocks.multi;
 
-import arc.func.*;
-import arc.scene.ui.layout.*;
-import mindustry.gen.*;
-import mindustry.type.*;
-import mindustry.ui.*;
-import mindustry.world.consumers.*;
-import mindustry.world.meta.*;
+import arc.func.Func;
+import arc.scene.ui.layout.Table;
+import mindustry.gen.Building;
+import mindustry.type.PayloadSeq;
+import mindustry.type.PayloadStack;
+import mindustry.ui.ItemImage;
+import mindustry.ui.ReqImage;
+import mindustry.world.consumers.Consume;
+import mindustry.world.consumers.ConsumePayloadDynamic;
+import mindustry.world.meta.Stats;
 
 /** Copy of {@linkplain ConsumePayloadDynamic} that takes a PayloadStack[] */
 public class CustomConsumePayloadDynamic extends Consume {

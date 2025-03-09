@@ -1,29 +1,33 @@
 package ultimatedimension.world.blocks.crafter;
 
-import arc.math.*;
-import arc.util.*;
-import mindustry.gen.Sounds;
-import mindustry.logic.LAccess;
-import mindustry.type.*;
-import mindustry.world.meta.*;
-import arc.graphics.g2d.*;
-import arc.struct.*;
-import arc.util.io.*;
-import static mindustry.Vars.*;
+import arc.graphics.g2d.Draw;
+import arc.graphics.g2d.TextureRegion;
+import arc.math.Mathf;
 import arc.math.geom.Geometry;
+import arc.struct.EnumSet;
+import arc.struct.Seq;
+import arc.util.Eachable;
 import arc.util.Nullable;
-import mindustry.Vars;
+import arc.util.Time;
+import arc.util.io.Reads;
+import arc.util.io.Writes;
 import mindustry.content.Fx;
 import mindustry.entities.Effect;
 import mindustry.entities.units.BuildPlan;
+import mindustry.gen.Sounds;
+import mindustry.logic.LAccess;
+import mindustry.type.Item;
 import mindustry.type.ItemStack;
 import mindustry.type.LiquidStack;
 import mindustry.world.draw.DrawBlock;
 import mindustry.world.draw.DrawDefault;
+import mindustry.world.meta.BlockFlag;
 import mindustry.world.meta.Stat;
 import mindustry.world.meta.StatUnit;
 import mindustry.world.meta.StatValues;
 import ultimatedimension.world.blocks.UDBlock;
+
+import static mindustry.Vars.tilesize;
 
 public class UDGenericCrafter extends UDBlock {
 

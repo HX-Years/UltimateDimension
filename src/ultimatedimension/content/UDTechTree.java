@@ -3,14 +3,13 @@ package ultimatedimension.content;
 import mindustry.content.Items;
 import mindustry.content.Liquids;
 
-import static mindustry.content.Blocks.*;
 import static mindustry.content.TechTree.*;
+import static ultimatedimension.content.UDCoreBlocks.hanCore;
 import static ultimatedimension.content.UDCrafterBlocks.*;
 import static ultimatedimension.content.UDDefenseBlocks.*;
 import static ultimatedimension.content.UDItems.*;
 import static ultimatedimension.content.UDLiquids.*;
 import static ultimatedimension.content.UDPowerBlocks.*;
-import static ultimatedimension.content.UDCoreBlocks.*;
 
 public class UDTechTree implements ContentList{
 

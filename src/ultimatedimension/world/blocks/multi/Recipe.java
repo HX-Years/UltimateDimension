@@ -1,11 +1,11 @@
 package ultimatedimension.world.blocks.multi;
 
-import arc.func.*;
-import arc.graphics.*;
-import arc.graphics.g2d.*;
-import arc.util.*;
-import mindustry.content.*;
-import mindustry.entities.*;
+import arc.func.Prov;
+import arc.graphics.Color;
+import arc.graphics.g2d.TextureRegion;
+import arc.util.Nullable;
+import mindustry.content.Fx;
+import mindustry.entities.Effect;
 
 public class Recipe {
     public IOEntry input;

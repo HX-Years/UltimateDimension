@@ -1,9 +1,9 @@
 package ultimatedimension.content;
 
-import mindustry.content.*;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.blocks.storage.*;
+import mindustry.content.UnitTypes;
+import mindustry.type.Category;
+import mindustry.type.ItemStack;
+import mindustry.world.Block;
 import ultimatedimension.world.blocks.storage.UDCoreBlock;
 
 public class UDCoreBlocks implements ContentList {

@@ -1,8 +1,9 @@
 package ultimatedimension;
 
-import arc.*;
-import arc.files.*;
-import static mindustry.Vars.*;
+import arc.Core;
+import arc.files.Fi;
+
+import static mindustry.Vars.dataDirectory;
 
 public class UD {
     public static final String ModName = "ultimate-dimension";

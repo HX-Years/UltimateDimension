@@ -1,21 +1,24 @@
 package ultimatedimension.world.blocks.multi;
 
-import arc.*;
-import arc.func.*;
-import arc.graphics.g2d.*;
-import arc.scene.style.*;
-import arc.util.*;
-import mindustry.*;
-import mindustry.content.*;
-import mindustry.ctype.*;
-import mindustry.entities.*;
-import mindustry.gen.*;
-import mindustry.type.*;
-import mindustry.world.*;
+import arc.Core;
+import arc.func.Prov;
+import arc.graphics.g2d.TextureRegion;
+import arc.scene.style.TextureRegionDrawable;
+import arc.util.Nullable;
+import mindustry.Vars;
+import mindustry.content.Fx;
+import mindustry.ctype.UnlockableContent;
+import mindustry.entities.Effect;
+import mindustry.gen.Icon;
+import mindustry.type.Item;
+import mindustry.type.Liquid;
+import mindustry.type.UnitType;
+import mindustry.world.Block;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Field;
 
-import static ultimatedimension.world.blocks.multi.ParserUtils.*;
+import static ultimatedimension.world.blocks.multi.ParserUtils.field;
+import static ultimatedimension.world.blocks.multi.ParserUtils.kebab2camel;
 
 public class ContentResolver {
 

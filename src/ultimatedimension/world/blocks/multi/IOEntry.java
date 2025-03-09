@@ -1,12 +1,11 @@
 package ultimatedimension.world.blocks.multi;
 
-import arc.func.*;
-import arc.graphics.*;
-import arc.graphics.g2d.*;
-import arc.struct.*;
-import arc.util.*;
-
-import mindustry.ctype.*;
+import arc.func.Prov;
+import arc.graphics.Color;
+import arc.graphics.g2d.TextureRegion;
+import arc.struct.ObjectSet;
+import arc.util.Nullable;
+import mindustry.ctype.UnlockableContent;
 import mindustry.type.*;
 
 public class IOEntry {

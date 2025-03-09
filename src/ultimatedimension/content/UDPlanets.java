@@ -1,20 +1,14 @@
 package ultimatedimension.content;
 
-import arc.func.*;
-import arc.graphics.*;
-import arc.math.*;
-import arc.math.geom.*;
-import arc.struct.*;
-import arc.util.*;
-import mindustry.game.*;
-import mindustry.graphics.*;
-import mindustry.graphics.g3d.*;
-import mindustry.graphics.g3d.PlanetGrid.*;
-import mindustry.maps.planet.*;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.meta.*;
-import mindustry.content.*;
+import arc.graphics.Color;
+import mindustry.content.Planets;
+import mindustry.game.Team;
+import mindustry.graphics.Pal;
+import mindustry.graphics.g3d.HexMesh;
+import mindustry.graphics.g3d.HexSkyMesh;
+import mindustry.graphics.g3d.MultiMesh;
+import mindustry.maps.planet.SerpuloPlanetGenerator;
+import mindustry.type.Planet;
 
 public class UDPlanets implements ContentList{
 

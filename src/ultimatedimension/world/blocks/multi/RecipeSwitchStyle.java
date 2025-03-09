@@ -1,17 +1,23 @@
 package ultimatedimension.world.blocks.multi;
 
-import arc.scene.ui.*;
-import arc.scene.ui.layout.*;
-import arc.scene.utils.*;
-import arc.util.*;
-import mindustry.*;
-import mindustry.gen.*;
-import mindustry.graphics.*;
-import mindustry.type.*;
-import mindustry.ui.*;
-import ultimatedimension.world.blocks.multi.MultiCrafter.*;
+import arc.scene.ui.Image;
+import arc.scene.ui.ImageButton;
+import arc.scene.ui.TextButton;
+import arc.scene.ui.layout.Table;
+import arc.scene.utils.Elem;
+import arc.util.Nullable;
+import arc.util.Scaling;
+import mindustry.Vars;
+import mindustry.gen.Icon;
+import mindustry.gen.Tex;
+import mindustry.graphics.Pal;
+import mindustry.type.ItemStack;
+import mindustry.type.LiquidStack;
+import mindustry.type.PayloadStack;
+import mindustry.ui.Styles;
+import ultimatedimension.world.blocks.multi.MultiCrafter.MultiCrafterBuild;
 
-import java.util.*;
+import java.util.HashMap;
 
 public abstract class RecipeSwitchStyle {
   public static HashMap<String, RecipeSwitchStyle> all = new HashMap<>();

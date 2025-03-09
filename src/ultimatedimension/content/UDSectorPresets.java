@@ -2,7 +2,7 @@ package ultimatedimension.content;
 
 import mindustry.type.SectorPreset;
 
-import static ultimatedimension.content.UDPlanets.*;
+import static ultimatedimension.content.UDPlanets.vastness;
 
 public class UDSectorPresets implements ContentList{
 	public static SectorPreset landingArea;

@@ -1,31 +1,33 @@
 package ultimatedimension;
 
-import arc.*;
-import arc.util.*;
-import arc.files.*;
-import arc.func.*;
-import arc.scene.ui.*;
-import arc.scene.ui.TextButton.*;
-import arc.scene.ui.layout.*;
-import mindustry.mod.*;
-import mindustry.*;
-import mindustry.ui.*;
-import mindustry.graphics.*;
-import mindustry.ui.dialogs.*;
-import mindustry.gen.*;
-import mindustry.game.*;
-import mindustry.game.EventType.*;
+import arc.Core;
+import arc.Events;
+import arc.files.Fi;
+import arc.func.Boolp;
+import arc.func.Cons;
+import arc.func.Floatc;
+import arc.func.Intc;
+import arc.util.Log;
+import arc.util.Time;
+import mindustry.Vars;
+import mindustry.game.EventType.ClientLoadEvent;
+import mindustry.gen.Icon;
+import mindustry.graphics.Pal;
+import mindustry.mod.Mod;
+import mindustry.ui.Bar;
+import mindustry.ui.dialogs.BaseDialog;
+import mindustry.ui.dialogs.SettingsMenuDialog;
 import ultimatedimension.content.*;
-import ultimatedimension.fileIO.Password;
 
-import static ultimatedimension.fileIO.Password.*;
+import java.io.BufferedInputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-import static mindustry.Vars.*;
+import static mindustry.Vars.mainExecutor;
+import static mindustry.Vars.ui;
 import static ultimatedimension.UD.*;
-
-import java.io.*;
-import java.net.*;
-import java.util.*;
+import static ultimatedimension.fileIO.Password.inputPassWord;
 
 public class UltimateDimension extends Mod {
 //TODO
