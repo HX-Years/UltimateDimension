@@ -1,7 +1,9 @@
 package ultimatedimension.content;
 
 import arc.struct.Seq;
+import arc.util.Log;
 import mindustry.content.Items;
+import mindustry.content.Liquids;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.world.Block;
@@ -9,9 +11,10 @@ import mindustry.world.blocks.production.GenericCrafter;
 import ultimatedimension.world.blocks.crafter.MultiRecipeCrafter;
 import ultimatedimension.world.blocks.crafter.UDGenericCrafter;
 import ultimatedimension.world.blocks.multi.IOEntry;
-import ultimatedimension.world.blocks.multi.MultiCrafter;
 import ultimatedimension.world.blocks.multi.Recipe;
 import ultimatedimension.world.blocks.multi.RecipeSwitchStyle;
+import ultimatedimension.world.blocks.multic.MultiCrafter;
+
 
 public class UDCrafterBlocks implements ContentList {
 
@@ -24,11 +27,44 @@ public class UDCrafterBlocks implements ContentList {
 			researchCenter, // 研究中心
 			dataMatrixResearchCenter, // 数据矩阵研究中心
 			superComputingMatrixResearchCenter, // 超算矩阵研究中心
-			mainCrafter;
+			mainCrafter,
+			main2Crafter;
 
 	@Override
 	public void load() {
 		mainCrafter = new MultiCrafter("main-crafter") {
+			{
+				size = 2;
+				hasItems = true;
+				hasLiquids = true;
+				outputsPower = true;
+				requirements(Category.crafting, ItemStack.with(
+						Items.lead, 15,
+						UDItems.iron, 30));
+				recipe(60f)
+						.input(Items.copper, 1)
+						.input(Items.lead, 1)
+						.output(Items.surgeAlloy, 1)
+						.output(UDItems.steel, 1)
+						.consumePower(60f);
+				recipe(60f)
+						.input(Items.copper, 1)
+						.output(Items.surgeAlloy, 1)
+						.output(Items.beryllium, 1);
+				recipe(30f)
+						.input(Liquids.water, 10f)
+						.input(Items.surgeAlloy, 2)
+						.consumePower(20f)
+						.output(UDItems.steel, 3)
+						.output(UDLiquids.superFrozenLiquid, 10f)
+						.producePower(30f);
+				Log.info("配方数量: @", recipes.size);
+				recipes.each(r -> Log.info("配方: @ 输入: @ 输出: @",
+						r.hashCode(), r.iInputs, r.iOutputs));
+			}
+		};
+
+		main2Crafter = new ultimatedimension.world.blocks.multi.MultiCrafter("main2-crafter") {
 			{
 				size = 2;
 				hasItems = true;
@@ -76,6 +112,7 @@ public class UDCrafterBlocks implements ContentList {
 						});
 			}
 		};
+
 		steelFactory = new MultiRecipeCrafter("steel_factory") {
 			{
 				requirements(Category.crafting, ItemStack.with(
@@ -122,7 +159,7 @@ public class UDCrafterBlocks implements ContentList {
 				size = 3;
 				health = 2000;
 				isBuildTime = true;
-				udBuildTime = 180f;
+				udBuildTime = 240f;
 				hasItems = true;
 				hasPower = true;
 				itemCapacity = 20;
@@ -130,6 +167,7 @@ public class UDCrafterBlocks implements ContentList {
 				consumePower(60f);
 				outputsPower = true;
 				powerProduction = 800f;
+				outputItem = new ItemStack(Items.lead, 1);
 			}
 		};
 
@@ -149,7 +187,7 @@ public class UDCrafterBlocks implements ContentList {
 						new ItemStack(Items.surgeAlloy, 1),
 						new ItemStack(Items.thorium, 2));
 				consumePower(45f);
-				outputItem = new ItemStack(UDItems.nanoAlloy, 2);
+				outputItem = new ItemStack(UDItems.nanoAlloy, 10);
 			}
 		};
 

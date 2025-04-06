@@ -87,8 +87,6 @@ public class UDGenericCrafter extends UDBlock {
             } else {
                 stats.add(Stat.productionTime, craftTime / 60f, StatUnit.seconds);
             }
-            ;
-
         }
 
         if (outputItems != null) {

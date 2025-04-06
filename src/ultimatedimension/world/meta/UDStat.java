@@ -6,7 +6,7 @@ import mindustry.world.meta.StatCat;
 public class UDStat extends Stat {
 
   public static final Stat unitPower = new Stat("unitPower"),
-      udhaspower = new Stat("udhaspower");
+          udhaspower = new Stat("udhaspower");
 
   public UDStat(String name, StatCat category) {
     super(name, category);

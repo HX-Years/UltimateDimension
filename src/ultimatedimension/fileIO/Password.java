@@ -10,8 +10,14 @@ import static ultimatedimension.UD.udDirectory;
 public class Password {
 
     public static void inputPassWord() {
-        writeFile();
+        //writeFile();
+        //w();
     }
+    private static void w() {
+        Fi readMe = udDirectory.child("这是留给你的话" + ".txt");
+        readMe.writeString("你好，当你看到这条信息时，就说明你已经完成了最终的任务。");
+    }
+
     private static void writeFile() {
         int num = 1;
 		//boolean zzhh = true;

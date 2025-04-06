@@ -13,10 +13,10 @@ public class UD {
     }
 
     public static String getBundle(String bundleKey) {
-       return Core.bundle.format(bundleKey);
+        return Core.bundle.format(bundleKey);
     }
 
-    public static Fi udDirectory = dataDirectory.child("UltimateDimension/");
+    public static Fi udDirectory = dataDirectory.child("UltimateDimension\\");
 
     public static void put(String name, Object value) {
         Core.settings.putJson(name, value);
