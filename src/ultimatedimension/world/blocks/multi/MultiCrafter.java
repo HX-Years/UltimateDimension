@@ -564,8 +564,8 @@ public class MultiCrafter extends PayloadBlock {
       if (sensor == LAccess.heat)
         return warmup();
       // attempt to prevent wild total fluid fluctuation, at least for crafter
-      // if(sensor == LAccess.totalLiquids && outputLiquid != null) return
-      // liquids.get(outputLiquid.liquid);
+//       if(sensor == LAccess.totalLiquids && outputLiquid != null) return
+//       liquids.get(outputLiquid.liquid);
       return super.sense(sensor);
     }
 

@@ -8,6 +8,10 @@ import mindustry.world.Block;
 import mindustry.world.blocks.power.Battery;
 import mindustry.world.blocks.power.ImpactReactor;
 import mindustry.world.blocks.power.PowerNode;
+import mindustry.world.meta.BuildVisibility;
+import ultimatedimension.world.blocks.sandbox.UDPowerSource;
+
+import static mindustry.type.ItemStack.with;
 
 public class UDPowerBlocks implements ContentList{
 
@@ -16,7 +20,8 @@ public class UDPowerBlocks implements ContentList{
 	nuclearFusionReactor,//核聚变反应堆
 	powerHealNode,//电力恢复节点
 	powerGridNode,//电网节点
-	healNode;//恢复节点
+	healNode,//恢复节点
+	udPowerSource;
 
 	@Override
 	public void load(){
@@ -74,6 +79,12 @@ public class UDPowerBlocks implements ContentList{
 			size = 2;
 			maxNodes = 15;
 			laserRange = 15f;
+		}};
+
+		udPowerSource = new UDPowerSource("custom-power-source"){{
+			requirements(Category.power, BuildVisibility.sandboxOnly, with());
+			//powerProduction = 1000000f / 60f;
+			alwaysUnlocked = true;
 		}};
 	}
 }

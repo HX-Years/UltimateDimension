@@ -17,10 +17,11 @@ public class Recipe {
     public transient Seq<Liquid> liquidsUnique = new Seq<>();
 
 
-    public float powerConsume;
-    public float powerProduce;
+    public float powerConsume = 0;
+    public float powerProduce = 0;
     public float heatProduce;
     public float heatConsume;
+
 
     public Recipe(float craftTime) {
         this.craftTime = craftTime;
@@ -37,6 +38,7 @@ public class Recipe {
             liquidsUnique.add(stack.liquid);
         }
     }
+
 
     public boolean isValid() {
         // 至少有一个输入和一个输出
@@ -111,34 +113,40 @@ public class Recipe {
         return isInputHeat() || isOutputHeat();
     }
 
-    public int maxItemAmount() {
-        int max = 0;
-        for (ItemStack item : items) {
-            max = Math.max(item.amount, max);
+//    public int maxItemAmount() {
+//        int max = 0;
+//        for (ItemStack item : items) {
+//            max = Math.max(item.amount, max);
+//        }
+//        return max;
+//    }
+//
+    public float maxLiquidAmount() {
+        float max;
+        float max1 = 0;
+        float max2 = 0;
+        for (LiquidStack liquid : lInputs) {
+            max1 = Math.max(liquid.amount, max1);
         }
+        for (LiquidStack liquid : lOutputs) {
+            max2 = Math.max(liquid.amount, max2);
+        }
+        max = Math.max(max1, max2);
         return max;
     }
+//    public int maxItemAmount() {
+//        return Math.max(iInputs.maxItemAmount(), iOutput.maxItemAmount());
+//    }
+//
+//    public float maxFluidAmount() {
+//        return Math.max(lInput.maxLiquidAmount(), lOutput.maxLiquidAmount());
+//    }
 
-    public float maxFluidAmount() {
-        float max = 0;
-        for (LiquidStack fluid : fluids) {
-            max = Math.max(fluid.amount, max);
-        }
-        return max;
-    }
-    public int maxItemAmount() {
-        return Math.max(iInputs.maxItemAmount(), iOutput.maxItemAmount());
-    }
-
-    public float maxFluidAmount() {
-        return Math.max(input.maxFluidAmount(), output.maxFluidAmount());
-    }
-
-    public float maxPower() {
-        return Math.max(input.power, output.power);
-    }
+//    public float maxPower() {
+//        return Math.max(powerConsume, powerProduce);
+//    }
 
     public float maxHeat() {
-        return Math.max(input.heat, output.heat);
+        return Math.max(heatConsume, heatProduce);
     }
 }

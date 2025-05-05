@@ -35,6 +35,7 @@ public class UDBlock extends Block {
         update = true;
     }
 
+    //TODO 该方法要移到子类
     @Override
     public void setStats() {
         super.setStats();
@@ -47,6 +48,7 @@ public class UDBlock extends Block {
     public void setBars() {
         super.setBars();
 
+        //TODO too
         if (hasPower && outputsPower) {
             addBar("power", (UDBuilding entity) -> new Bar(() -> Core.bundle.format("bar.poweroutput",
                     Strings.fixed(entity.getPowerProduction() * 60 * entity.timeScale(), 1)),
