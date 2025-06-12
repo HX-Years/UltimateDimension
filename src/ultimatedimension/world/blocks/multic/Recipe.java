@@ -19,8 +19,8 @@ public class Recipe {
 
     public float powerConsume = 0;
     public float powerProduce = 0;
-    public float heatProduce;
-    public float heatConsume;
+    public float heatProduce = 0;
+    public float heatConsume = 0;
 
 
     public Recipe(float craftTime) {
@@ -44,8 +44,9 @@ public class Recipe {
         // 至少有一个输入和一个输出
 //        return (!iInputs.isEmpty() || !lInputs.isEmpty())
 //                && (!iOutputs.isEmpty() || !lOutputs.isEmpty());
-        return (hasInputs() || hasPowerInput()) &&
-                (hasOutputs() || hasPowerOutput());
+        //TODO will to join heat
+        return (hasInputs() || hasEnergyInput()) &&
+                (hasOutputs() || hasEnergyOutput());
     }
 
     private boolean hasInputs() {
@@ -56,12 +57,12 @@ public class Recipe {
         return !iOutputs.isEmpty() || !lOutputs.isEmpty();
     }
 
-    private boolean hasPowerInput() {
-        return powerConsume > 0;
+    private boolean hasEnergyInput() {
+        return (powerConsume > 0) || (heatConsume > 0);
     }
 
-    private boolean hasPowerOutput() {
-        return powerProduce > 0;
+    private boolean hasEnergyOutput() {
+        return (powerProduce > 0) || (heatProduce > 0);
     }
 
     //
@@ -113,14 +114,20 @@ public class Recipe {
         return isInputHeat() || isOutputHeat();
     }
 
-//    public int maxItemAmount() {
-//        int max = 0;
-//        for (ItemStack item : items) {
-//            max = Math.max(item.amount, max);
-//        }
-//        return max;
-//    }
-//
+    public int maxItemAmount() {
+        int max;
+        int max1 = 0;
+        int max2 = 0;
+        for (ItemStack item : iInputs) {
+            max1 = Math.max(item.amount, max1);
+        }
+        for (ItemStack item : iOutputs) {
+            max2 = Math.max(item.amount, max2);
+        }
+        max = Math.max(max1, max2);
+        return max;
+    }
+
     public float maxLiquidAmount() {
         float max;
         float max1 = 0;
@@ -138,13 +145,13 @@ public class Recipe {
 //        return Math.max(iInputs.maxItemAmount(), iOutput.maxItemAmount());
 //    }
 //
-//    public float maxFluidAmount() {
+//    public float maxLiquidAmount() {
 //        return Math.max(lInput.maxLiquidAmount(), lOutput.maxLiquidAmount());
 //    }
 
-//    public float maxPower() {
-//        return Math.max(powerConsume, powerProduce);
-//    }
+    public float maxPower() {
+        return Math.max(powerConsume, powerProduce);
+    }
 
     public float maxHeat() {
         return Math.max(heatConsume, heatProduce);

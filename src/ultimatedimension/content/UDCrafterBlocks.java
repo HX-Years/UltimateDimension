@@ -1,7 +1,6 @@
 package ultimatedimension.content;
 
 import arc.struct.Seq;
-import arc.util.Log;
 import mindustry.content.Items;
 import mindustry.content.Liquids;
 import mindustry.type.Category;
@@ -18,7 +17,7 @@ import ultimatedimension.world.blocks.multic.MultiCrafter;
 
 
 public class UDCrafterBlocks implements ContentList {
-    
+
     public static Block steelFactory, // 钢厂
             electricCubeBaler, // 电立方打包机
             electricCubeUnpackingMachine, // 电立方解包机
@@ -30,7 +29,7 @@ public class UDCrafterBlocks implements ContentList {
             superComputingMatrixResearchCenter, // 超算矩阵研究中心
             mainCrafter,
             main2Crafter;
-    
+
     @Override
     public void load() {
         mainCrafter = new MultiCrafter("main-crafter") {
@@ -63,13 +62,6 @@ public class UDCrafterBlocks implements ContentList {
                         .input(Items.surgeAlloy, 2)
                         .consumePower(20f)
                         .output(UDItems.steel, 3)
-                        .output(UDLiquids.superFrozenLiquid, 10f)
-                        .producePower(30f);
-                recipe(30f)
-                        .input(Liquids.water, 10f)
-                        .input(Items.surgeAlloy, 2)
-                        .consumePower(20f)
-                        .output(UDItems.steel, 3)
                         .output(UDLiquids.superFrozenLiquid, 10f);
                 recipe(30f)
                         .input(Liquids.water, 10f)
@@ -81,12 +73,12 @@ public class UDCrafterBlocks implements ContentList {
                         .input(Items.surgeAlloy, 2)
                         .output(UDItems.steel, 3)
                         .output(UDLiquids.superFrozenLiquid, 10f);
-                Log.info("配方数量: @", recipes.size);
-                recipes.each(r -> Log.info("配方: @ 输入: @ 输出: @",
-                        r.hashCode(), r.iInputs, r.iOutputs));
+                //Log.info("配方数量: @", recipes.size);
+                //recipes.each(r -> Log.info("配方: @ 输入: @ 输出: @",
+                //        r.hashCode(), r.iInputs, r.iOutputs));
             }
         };
-        
+
         main2Crafter = new ultimatedimension.world.blocks.multi.MultiCrafter("main2-crafter") {
             {
                 size = 2;
@@ -143,7 +135,7 @@ public class UDCrafterBlocks implements ContentList {
                         });
             }
         };
-        
+
         steelFactory = new MultiRecipeCrafter("steel_factory") {
             {
                 requirements(Category.crafting, ItemStack.with(
@@ -162,7 +154,7 @@ public class UDCrafterBlocks implements ContentList {
                 outputItem = new ItemStack(UDItems.steel, 1);
             }
         };
-        
+
         electricCubeBaler = new GenericCrafter("electric_cube_baler") {
             {
                 requirements(Category.crafting, ItemStack.with(
@@ -180,7 +172,7 @@ public class UDCrafterBlocks implements ContentList {
                 outputItem = new ItemStack(UDItems.electricCube, 1);
             }
         };
-        
+
         electricCubeUnpackingMachine = new UDGenericCrafter("electric_cube_unpacking_machine") {
             {
                 requirements(Category.crafting, ItemStack.with(
@@ -201,7 +193,7 @@ public class UDCrafterBlocks implements ContentList {
                 outputItem = new ItemStack(Items.lead, 1);
             }
         };
-        
+
         superNuclearMachine = new GenericCrafter("super_nuclear_machine") {
             {
                 requirements(Category.crafting, ItemStack.with(
@@ -221,7 +213,7 @@ public class UDCrafterBlocks implements ContentList {
                 outputItem = new ItemStack(UDItems.nanoAlloy, 10);
             }
         };
-        
+
         tungstenSteelSmelter = new GenericCrafter("tungsten_steel_smelter") {
             {
                 requirements(Category.crafting, ItemStack.with(
@@ -240,7 +232,7 @@ public class UDCrafterBlocks implements ContentList {
                 outputItem = new ItemStack(UDItems.tungstenSteel, 2);
             }
         };
-        
+
         researchCenter = new GenericCrafter("research_center") {
             {
                 requirements(Category.crafting, ItemStack.with(
@@ -253,7 +245,7 @@ public class UDCrafterBlocks implements ContentList {
                 health = 1200;
             }
         };
-        
+
         dataMatrixResearchCenter = new GenericCrafter("data_matrix_research_center") {
             {
                 requirements(Category.crafting, ItemStack.with(
