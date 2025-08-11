@@ -42,11 +42,8 @@ public class Recipe {
 
     public boolean isValid() {
         // 至少有一个输入和一个输出
-//        return (!iInputs.isEmpty() || !lInputs.isEmpty())
-//                && (!iOutputs.isEmpty() || !lOutputs.isEmpty());
-        //TODO will to join heat
         return (hasInputs() || hasEnergyInput()) &&
-                (hasOutputs() || hasEnergyOutput());
+                (hasOutputs() || hasEnergyOutput())&& (powerConsume <= 0 || (powerProduce >= powerConsume));
     }
 
     private boolean hasInputs() {

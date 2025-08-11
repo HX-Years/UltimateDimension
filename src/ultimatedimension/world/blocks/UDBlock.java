@@ -30,6 +30,7 @@ public class UDBlock extends Block {
 
     public Stat generationType = Stat.basePowerGeneration;
 
+
     public UDBlock(String name) {
         super(name);
         update = true;
@@ -156,6 +157,18 @@ public class UDBlock extends Block {
         public float generateTime;
         /** The efficiency of the producer. An efficiency of 1.0 means 100% */
         public float productionEfficiency = 0.0f;
+
+        public boolean hasPower() {
+            return false;
+        }
+
+        public boolean outputsPower() {
+            return false;
+        }
+
+        public boolean consumesPower() {
+            return false;
+        }
 
         @Override
         public float warmup() {

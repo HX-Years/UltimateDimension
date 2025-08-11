@@ -70,7 +70,7 @@ public class MultiCrafter extends UDBlock {
         sync = true;
         flags = EnumSet.of(BlockFlag.factory);
     }
-    
+
     public void init() {
         //recipeIndex = Mathf.clamp(recipeIndex, 0, recipes.size - 1);
         Events.on(EventType.WorldLoadEvent.class, e -> {
@@ -146,6 +146,19 @@ public class MultiCrafter extends UDBlock {
         public boolean hasEnoughPower;
         public boolean isPowerProducer;
 
+        @Override
+        public boolean hasPower() {
+            return currentRecipe != null && currentRecipe.hasPower();
+        }
+        @Override
+        public boolean outputsPower() {
+            return currentRecipe != null && currentRecipe.isOutputPower();
+        }
+        @Override
+        public boolean consumesPower() {
+            return currentRecipe != null && currentRecipe.isInputPower();
+        }
+
         public Recipe getRecipe() {
             if (currentRecipe == null || !recipes.contains(currentRecipe)) {
                 // 默认选择第一个有效配方，避免崩溃
@@ -195,9 +208,15 @@ public class MultiCrafter extends UDBlock {
         @Override
         public float edelta() {
             Recipe rec = getRecipe();
-            if (rec.powerConsume > 0f) {
+//            if (rec.powerConsume > 0f) {
+//                return this.efficiency * Mathf.clamp(getPower() / rec.powerConsume) * this.delta();
+//            } else {
+//                return this.efficiency * this.delta();
+//            }
+            if (rec.isInputPower() && rec.powerConsume > 0f) {
                 return this.efficiency * Mathf.clamp(getPower() / rec.powerConsume) * this.delta();
             } else {
+                // 非电力配方直接使用基础效率
                 return this.efficiency * this.delta();
             }
         }
@@ -217,18 +236,17 @@ public class MultiCrafter extends UDBlock {
             }
             // cool down
             //TODO
-            if (efficiency > 0 && !hasPower || getPower() >= rec.powerConsume) {
+            // 修复：修改生产条件判断
+            //if (efficiency > 0 && !hasPower || getPower() >= rec.powerConsume) {
+            if (efficiency > 0 && shouldConsume()) {
                 // if <= 0, instantly produced
-                if (reqCraftTime > 0f)
-                    craftingTime += edelta();
+                if (reqCraftTime > 0f) craftingTime += edelta();
                 warmup = Mathf.approachDelta(warmup, warmupTarget(), warmupSpeed);
                 //hasPower
-                if (hasPower) {
+                if (rec.isInputPower() || rec.isOutputPower()) {
                     float powerChange = (rec.powerProduce - rec.powerConsume) * edelta();
                     if (powerChange < 0) { // 净消耗
-                        if (getPower() >= -powerChange) { // 确保有足够电力
-                            setPower(getPower() + powerChange);
-                        }
+                        setPower(getPower() + powerChange);
                     } else { // 净生产
                         setPower(Mathf.clamp(getPower() + powerChange, 0, powerCapacity));
                     }
@@ -292,11 +310,14 @@ public class MultiCrafter extends UDBlock {
         @Override
         public boolean shouldConsume() {
             Recipe rec = getRecipe();
-            if (hasItems)
-                for (ItemStack output : rec.iOutputs)
-                    if (items.get(output.item) + output.amount > itemCapacity)
+            if (hasItems) {
+                for (ItemStack output : rec.iOutputs) {
+                    if (items.get(output.item) + output.amount > itemCapacity) {
                         return false;
-            
+                    }
+                }
+            }
+
             if (hasLiquids) {
                 if (rec.isOutputLiquid() && !ignoreLiquidFullness) {
                     boolean allFull = true;
@@ -313,10 +334,20 @@ public class MultiCrafter extends UDBlock {
                         return false;
                 }
             }
-            if (rec.powerConsume > 0 && getPower() <= 0.001f) {
-                return false; // 没有电力时禁止生产
+
+            // 修复：仅当实际需要消耗电力时才检查
+//            if (rec.isInputPower() && rec.powerConsume > 0 && getPower() < rec.powerConsume - 0.001f) {
+//                return false;
+//            }
+            if (rec.isInputPower() && rec.powerConsume > 0) {
+                if (power == null) {
+                    return false; // 未连电网
+                }
+                if (getPower() < rec.powerConsume - 0.001f) {
+                    return false; // 电力不足
+                }
+
             }
-            
             return enabled;
         }
         
@@ -566,35 +597,30 @@ public class MultiCrafter extends UDBlock {
         float maxLiquidAmount = 0f;
         float maxPower = 0f;
         float maxHeat = 0f;
-        boolean hasPowerRecipe = false;
-        boolean consumesPowerRecipe = false;
         
         for (Recipe recipe : recipes) {
             hasItems |= recipe.hasItems();
             hasLiquids |= recipe.hasLiquids();
-            hasPower |= recipe.hasPower();
+            //hasPower |= recipe.hasPower();
             hasHeat |= recipe.hasHeat();
 
-            // 判断是否有配方涉及电力
-            if (recipe.powerConsume > 0 || recipe.powerProduce > 0) {
-                hasPowerRecipe = true;
-            }
-            // 判断是否有配方需要净消耗电力
-            if (recipe.powerConsume > recipe.powerProduce) {
-                consumesPowerRecipe = true;
-            }
             maxItemAmount = Math.max(recipe.maxItemAmount(), maxItemAmount);
             maxLiquidAmount = Math.max(recipe.maxLiquidAmount(), maxLiquidAmount);
             maxPower = Math.max(recipe.maxPower(), maxPower);
             maxHeat = Math.max(recipe.maxHeat(), maxHeat);
 //            maxPayloadAmount = Math.max(recipe.maxPayloadAmount(), maxPayloadAmount);
 
+            // 改为动态判断
+            isOutputPower |= recipe.isOutputPower();
+            isInputPower |= recipe.isInputPower();
+            hasPower = isInputPower || isOutputPower;
+
             isOutputItem |= recipe.isOutputItem();
             acceptsItems = isInputItem |= recipe.isInputItem();
             outputsLiquid = isOutputLiquid |= recipe.isOutputLiquid();
             isInputLiquid |= recipe.isInputLiquid();
-            outputsPower = isOutputPower |= recipe.isOutputPower();
-            consumesPower = isInputPower |= recipe.isInputPower();
+            //outputsPower = isOutputPower |= recipe.isOutputPower();
+            //consumesPower = isInputPower |= recipe.isInputPower();
             isOutputHeat |= recipe.isOutputHeat();
             isInputHeat |= recipe.isInputHeat();
         }
@@ -604,17 +630,21 @@ public class MultiCrafter extends UDBlock {
     }
     
     protected void setupConsumers() {
-        if (isInputItem)
+        if (isInputItem) {
             consume(new ConsumeItemDynamic((MultiCrafterBuild b) -> b.getRecipe().iInputs));
-        if (isInputLiquid)
-            consume(new ConsumeLiquidDynamic(
-                    (MultiCrafterBuild b) -> b.getRecipe().lInputs));
+        }
+        if (isInputLiquid) {
+            consume(new ConsumeLiquidDynamic((MultiCrafterBuild b) -> b.getRecipe().lInputs));
+        }
+//        if (isInputPower) {
+//            consume(new ConsumePowerDynamic(b -> {
+//                MultiCrafterBuild build = (MultiCrafterBuild) b;
+//                Recipe rec = build.getRecipe();
+//                return rec != null ? rec.powerConsume : null;
+//            }));
+//        }
         if (isInputPower)
-            consume(new ConsumePowerDynamic(b -> {
-                MultiCrafterBuild build = (MultiCrafterBuild) b;
-                Recipe rec = build.getRecipe();
-                return rec != null ? rec.powerConsume : null;
-            }));
+            consume(new ConsumePowerDynamic(b -> ((MultiCrafterBuild) b).getRecipe().powerConsume));
     }
     
 }
